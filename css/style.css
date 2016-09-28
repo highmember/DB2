@@ -1,0 +1,152 @@
+@charset "UTF-8";
+tab1 {padding-left: 1em; }
+tab2 {padding-left: 2em; }
+tab3 {padding-left: 3em; }
+tab4 {padding-left: 4em; }
+#header {
+	font-size: 25px;
+	margin: 0 auto;
+	padding: 44px 0 50px;
+	text-align: center;
+	width: 960px;
+}
+#dropdown *{
+	margin: 0px;
+	padding: 0px;
+}
+#dropdown ul{
+	margin-left: 100px;
+  list-style: none;
+}
+#dropdown ul li{
+	background-color: #79ea4c;
+	border: 2px solid white;
+	width: 160px;
+  height: 50px;
+	line-height: 50px;
+	text-align: center;
+	float: left;
+	font-size: 20px;
+  position: relative;
+}
+#dropdown ul li a{
+	text-decoration: none;
+	color: white;
+	display: block;
+}
+#dropdown ul li a:hover{
+	background-color: #f4ed45;
+}
+#dropdown ul ul{
+	position: absolute;
+	margin-left: auto;
+	display: none;
+
+}
+#dropdown ul li:hover > ul{
+	display: block;
+}
+#body h1 {
+	display: inline-block;
+	background-color: #837550;
+	color: white;
+	text-align: center;
+	font-size: 25px;
+	margin: 0 auto;
+	padding: 15px 0 10px;
+	height: 30px;
+	width: 420px;
+}
+#body p{
+	margin-left: 150px;
+}
+#body #readonly{
+	border: 2px solid white;
+	color: #252525;
+	font-size: 15px;
+	font-weight: normal;
+	margin: 0 0 15px;
+	padding: 10px 10px;
+	text-align: left;
+	width: 300px;
+}
+#body  p input,#body #textarea,#body #detail{
+	border: 2px solid #252525;
+	color: #252525;
+	font-size: 15px;
+	font-weight: normal;
+	margin: 0 0 15px;
+	padding: 10px 10px;
+	text-align: left;
+	width: 300px;
+}
+#body  #textarea{
+	width: 800px;
+	resize: none;
+}
+#body  #address{
+	width: 800px;
+	resize: none;
+}
+#body  #detail{
+	width: 800px;
+	resize: none;
+}
+#body  #send {
+	margin-top: 10px;
+	background: #252525;
+	color: #fff;
+	font-size: 15px;
+	font-weight: normal;
+	display: inline-block;
+	padding: 20px 28px;
+	width: auto;
+}
+#body  #send:hover {
+	background: #fff;
+	color: #252525;
+	cursor: pointer;
+}
+#body  #func {
+	background: #252525;
+	color: #fff;
+	font-size: 15px;
+	font-weight: normal;
+	display: inline-block;
+	padding: 20px 28px;
+	width: auto;
+  margin-right: 150px;
+}
+#body  #func:hover {
+	background: #fff;
+	color: #252525;
+	cursor: pointer;
+}
+#body  #Edit {
+	background: #252525;
+	color: #fff;
+	font-size: 15px;
+	font-weight: normal;
+	display: inline-block;
+	padding: 20px 28px;
+	width: auto;
+}
+#body  #Edit:hover {
+	background: #fff;
+	color: #252525;
+	cursor: pointer;
+}
+#body  #Add {
+	background: #252525;
+	color: #fff;
+	font-size: 15px;
+	font-weight: normal;
+	display: inline-block;
+	padding: 20px 28px;
+	width: auto;
+}
+#body  #Add:hover {
+	background: #fff;
+	color: #252525;
+	cursor: pointer;
+}
