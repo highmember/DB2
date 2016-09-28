@@ -92,7 +92,7 @@ tab4 {padding-left: 4em; }
 	width: 800px;
 	resize: none;
 }
-#body  #send {
+#body  #send ,#body  #historywork,#body  #newcustomer{
 	margin-top: 10px;
 	background: #252525;
 	color: #fff;
@@ -102,12 +102,12 @@ tab4 {padding-left: 4em; }
 	padding: 20px 28px;
 	width: auto;
 }
-#body  #send:hover {
+#body  #send:hover,#body  #historywork:hover,#body  #newcustomer:hover {
 	background: #fff;
 	color: #252525;
 	cursor: pointer;
 }
-#body  #func {
+#body  #func,#body  #Edit,#body  #submit{
 	background: #252525;
 	color: #fff;
 	font-size: 15px;
@@ -117,12 +117,12 @@ tab4 {padding-left: 4em; }
 	width: auto;
   margin-right: 150px;
 }
-#body  #func:hover {
+#body  #func:hover,#body  #Edit:hover,#body  #submit:hover{
 	background: #fff;
 	color: #252525;
 	cursor: pointer;
 }
-#body  #Edit {
+#body  #Add,#body  #Add1,#body  #Add2{
 	background: #252525;
 	color: #fff;
 	font-size: 15px;
@@ -131,22 +131,22 @@ tab4 {padding-left: 4em; }
 	padding: 20px 28px;
 	width: auto;
 }
-#body  #Edit:hover {
+#body  #Add:hover,#body  #Add1:hover,#body  #Add2:hover{
 	background: #fff;
 	color: #252525;
 	cursor: pointer;
 }
-#body  #Add {
-	background: #252525;
-	color: #fff;
-	font-size: 15px;
-	font-weight: normal;
-	display: inline-block;
-	padding: 20px 28px;
-	width: auto;
+#body table{
+	font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
-#body  #Add:hover {
-	background: #fff;
-	color: #252525;
-	cursor: pointer;
+#body td,#body th{
+	border: 2px solid black;
+  text-align: center;
+	padding: 8px;
+}
+#body th{
+	text-align: center;
+	background-color: #dddddd;
 }
