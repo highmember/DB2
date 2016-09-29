@@ -1,3 +1,4 @@
+<!doctype html>
 <?php session_start();
 $hostname = "mysql.hostinger.in.th";
 $user = "u967435075_joker";
@@ -21,8 +22,8 @@ if($_POST['Add2'])
 	else{
 		$phasetotal = $_SESSION['phase'];
 	}
-	
-//$sql_add = "select * from `" . $tblname . "` where `" . $field_search . "` like " . $cusid . " ;";	
+
+//$sql_add = "select * from `" . $tblname . "` where `" . $field_search . "` like " . $cusid . " ;";
 $sql_add = "Update project Set proj_phase_total ='$phasetotal'  Where proj_id ='$id' ";
 mysqli_query($link,$sql_add) ;
 echo $sql_add;
@@ -51,7 +52,6 @@ mysqli_query($link, $sql_edit) ;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-  <script type="text/javascript" src="js/mobile.js"></script>
 </head>
 <body>
   <div id="header">
@@ -90,7 +90,7 @@ mysqli_query($link, $sql_edit) ;
           <li><a href="warehouse.php">คลังอุปกรณ์(ของบริษัท)</a></li>
         </ul>
       </li>
-      <li><a href="#">Vander</a>
+      <li><a href="#">Vender</a>
         <ul>
           <li><a href="newvender.php">เพิ่ม Vender ใหม่</a></li>
           <li><a href="oldvender.php">แก้ไขข้อมูล Vender</a></li>
@@ -111,7 +111,7 @@ mysqli_query($link, $sql_edit) ;
 		    <center><input type="submit" name="newcustomer" id="newcustomer" value="ตรวจสอบข้อมูลลูกค้า" /></center></form>
         <form action="newcustomers.php">
 		    <center><input type="submit" name="newcustomer" id="newcustomer" value="เพิ่มลูกค้าใหม่" /></center></form>
-		
+
     <br><br><br>
 	</div>
 </body>

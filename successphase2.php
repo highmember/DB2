@@ -1,3 +1,4 @@
+<!doctype html>
 <?php session_start();
 $hostname = "mysql.hostinger.in.th";
 $user = "u967435075_joker";
@@ -14,12 +15,12 @@ $dbquery = mysqli_query($link, $sql);
 if($_POST['Edit'])
 {
 $detail = $_POST['detail'];
-$start = $_POST['start'];	
+$start = $_POST['start'];
 $end = $_POST['end'];
 $price = $_POST['price'];
 $note = $_POST['note'];
 $status = $_POST['status'];
-$sql_edit = "UPDATE phase SET 
+$sql_edit = "UPDATE phase SET
  phase_detail = '$detail' , phase_start = '$start' ,phase_end = '$end' , phase_price = '$price', phase_note = '$note', phase_status = '$status' WHERE proj_id = '$phid' AND phase_id = '$id' ";
 mysqli_query($link,$sql_edit);
 echo $sql_edit;
@@ -33,7 +34,6 @@ echo $sql_edit;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-  <script type="text/javascript" src="js/mobile.js"></script>
 </head>
 <body>
   <div id="header">
@@ -72,7 +72,7 @@ echo $sql_edit;
           <li><a href="warehouse.php">คลังอุปกรณ์(ของบริษัท)</a></li>
         </ul>
       </li>
-      <li><a href="#">Vander</a>
+      <li><a href="#">Vender</a>
         <ul>
           <li><a href="newvender.php">เพิ่ม Vender ใหม่</a></li>
           <li><a href="oldvender.php">แก้ไขข้อมูล Vender</a></li>
@@ -89,7 +89,8 @@ echo $sql_edit;
 		<br><br><br>
       <form action="oldcustomers.php">
 		    <center><input type="submit" name="gotooldcustomer" id="send" value="ค้นหาลูกค้า" /></center></form>
-        <?echo "<td><a href = 'editproj.php?id=$phid'>แก้ไขงานต่อ</a></td>"  ;?>
+        <br><br><br>
+        <center><?echo "<td><a href = 'editproj.php?id=$phid'>แก้ไขงานต่อ</a></td>"  ;?></center>
     <br><br><br>
 	</div>
 </body>

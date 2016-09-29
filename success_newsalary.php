@@ -1,3 +1,4 @@
+<!doctype html>
 <?php session_start();
 $hostname = "mysql.hostinger.in.th";
 $user = "u967435075_joker";
@@ -30,7 +31,6 @@ echo $sql_add;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-  <script type="text/javascript" src="js/mobile.js"></script>
 </head>
 <body>
   <div id="header">
@@ -69,7 +69,7 @@ echo $sql_add;
           <li><a href="warehouse.php">คลังอุปกรณ์(ของบริษัท)</a></li>
         </ul>
       </li>
-      <li><a href="#">Vander</a>
+      <li><a href="#">Vender</a>
         <ul>
           <li><a href="newvender.php">เพิ่ม Vender ใหม่</a></li>
           <li><a href="oldvender.php">แก้ไขข้อมูล Vender</a></li>
@@ -79,13 +79,17 @@ echo $sql_add;
   </ul>
 </div>
 <div id="body">
-  <h1>อัปเดทข้อมูลแล้ว</h1>
-  <br />
-  <li><a href="salary.php">ค้นหาเงินเดือนของพนักงาน</a></li>
-  <li><a href="newsalary.php">เพิ่มเงินเดือนของพนักงานใหม่</a></li>
-  </br>
+  <br><br><br><br><br>
+  <center><h1>อัปเดทข้อมูลแล้ว</h1></center>
+  <br><br><br>
+  <form action="salary.php">
+    <center><input type="submit" name="gooldvender" id="send" value="ค้นหาเงินเดือนของพนักงาน" /></center></form>
+    <form action="new_salary.php">
+      <center><input type="submit" name="gonewvender" id="send" value="เพิ่มเงินเดือนของพนักงานใหม่" /></center></form>
+  
+  <br><br><br>
 </div>
-<p>&nbsp;</p>
+
 </body>
 </html>
 <?php

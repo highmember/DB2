@@ -1,3 +1,4 @@
+<!doctype html>
 <?php session_start();
 $hostname = "mysql.hostinger.in.th";
 $user = "u967435075_joker";
@@ -18,14 +19,14 @@ $result1 = mysqli_fetch_array($dbquery1);
 
 if($_POST['Add'])
 {
-	
+
 $descript = $_POST['descript'];
-$start = $_POST['start'];	
+$start = $_POST['start'];
 $price = $_POST['price'];
 $vid = $_POST['vid'];
 $pay = $price + $result['proj_curr_payment'];
 $pripay = $price + $result1['phase_payment'];
-$price1 = $result['proj_price'] - $pay; 
+$price1 = $result['proj_price'] - $pay;
 $sql_add = "insert into payment SET phase_id = '$prid' , proj_id = '$phid' ,pay_descript = '$descript', pay_date = '$start' , pay_price = '$price' , ven_id  = '$vid' ";
 $sql_edit = "UPDATE phase SET phase_payment = '$pripay' WHERE proj_id = '$phid' AND phase_id = '$prid' ";
 $sqlincome = "UPDATE project SET proj_curr_payment = '$pay' , proj_net_income = '$price1' where proj_id = '$phid' ";
@@ -43,7 +44,6 @@ mysqli_query($link,$sqlincome);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-  <script type="text/javascript" src="js/mobile.js"></script>
 </head>
 <body>
   <div id="header">
@@ -82,7 +82,7 @@ mysqli_query($link,$sqlincome);
           <li><a href="warehouse.php">คลังอุปกรณ์(ของบริษัท)</a></li>
         </ul>
       </li>
-      <li><a href="#">Vander</a>
+      <li><a href="#">Vender</a>
         <ul>
           <li><a href="newvender.php">เพิ่ม Vender ใหม่</a></li>
           <li><a href="oldvender.php">แก้ไขข้อมูล Vender</a></li>

@@ -1,3 +1,4 @@
+<!doctype html>
 <?php session_start();
 $hostname = "mysql.hostinger.in.th";
 $user = "u967435075_joker";
@@ -13,7 +14,7 @@ $result = mysqli_fetch_array($dbquery);
 if($_POST['Edit'])
 {
 
-$income = $_POST['income'];	
+$income = $_POST['income'];
 $in = $income+$result['proj_curr_income'];
 $sql_edit = "UPDATE phase SET phase_income = '$income' WHERE proj_id = '$phid' AND phase_id = '$id' ";
 $sqlincome = "UPDATE project SET proj_curr_income = '$in' where proj_id = '$phid' ";
@@ -32,7 +33,7 @@ echo $sqlincome;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-  <script type="text/javascript" src="js/mobile.js"></script>
+
 </head>
 <body>
   <div id="header">
@@ -71,7 +72,7 @@ echo $sqlincome;
           <li><a href="warehouse.php">คลังอุปกรณ์(ของบริษัท)</a></li>
         </ul>
       </li>
-      <li><a href="#">Vander</a>
+      <li><a href="#">Vender</a>
         <ul>
           <li><a href="newvender.php">เพิ่ม Vender ใหม่</a></li>
           <li><a href="oldvender.php">แก้ไขข้อมูล Vender</a></li>
