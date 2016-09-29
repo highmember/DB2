@@ -1,3 +1,4 @@
+<!doctype html>
 <?php
 $hostname = "mysql.hostinger.in.th";
 $user = "u967435075_joker";
@@ -37,7 +38,6 @@ echo $sql_edit;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-  <script type="text/javascript" src="js/mobile.js"></script>
 </head>
 <body>
   <div id="header">
@@ -76,7 +76,7 @@ echo $sql_edit;
           <li><a href="warehouse.php">คลังอุปกรณ์(ของบริษัท)</a></li>
         </ul>
       </li>
-      <li><a href="#">Vander</a>
+      <li><a href="#">Vender</a>
         <ul>
           <li><a href="newvender.php">เพิ่ม Vender ใหม่</a></li>
           <li><a href="oldvender.php">แก้ไขข้อมูล Vender</a></li>
@@ -86,12 +86,15 @@ echo $sql_edit;
   </ul>
 </div>
 <div id="body">
-  <h1>อัปเดทข้อมูลแล้ว</h1>
-  <br />
-  <li><a href="oldemployee.php">ค้นหาพนักงาน</a></li>
-  <li><a href="new_employee.php">เพิ่มพนักงานใหม่</a></li>
-  </br>
+  <br><br><br><br><br>
+  <center><h1>อัปเดทข้อมูลแล้ว</h1></center>
+  <br><br><br>
+  <form action="oldemployee.php">
+    <center><input type="submit" name="gooldemployee" id="send" value="ค้นหาพนักงาน" /></center></form>
+    <form action="newemployee.php">
+      <center><input type="submit" name="gotonewemployee" id="send" value="เพิ่มพนักงานใหม่" /></center></form>
+  <br><br><br>
+
 </div>
-<p>&nbsp;</p>
 </body>
 </html>

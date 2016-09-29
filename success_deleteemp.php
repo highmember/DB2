@@ -1,18 +1,19 @@
+<!doctype html>
 <?php
 $hostname = "mysql.hostinger.in.th";
-$user = "u967435075_joker"; 
-$password = "joker11"; 
-$dbname = "u967435075_song"; 
-$tblname = "oldcustomer"; 
-$projname = "project"; 
+$user = "u967435075_joker";
+$password = "joker11";
+$dbname = "u967435075_song";
+$tblname = "oldcustomer";
+$projname = "project";
 $field_search = "CUS_FNAME";
 $link = mysqli_connect($hostname,$user,$password,$dbname);
 mysqli_query($link,"SET NAMES utf8");
 $sql = "select * from `" . $tblname . "`;";
 $dbquery = mysqli_query($link, $sql);
 $num_rows = mysqli_num_rows($dbquery);
-$i=0; 
-if($_REQUEST['id'] != "") 
+$i=0;
+if($_REQUEST['id'] != "")
 {
 $del_id = $_REQUEST['id'];
 $sql_del = "delete from oldcustomer where CUS_ID = '$del_id';";
@@ -29,8 +30,6 @@ mysqli_query($link,$sql_del1) ;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width : 568px)">
-  <script type="text/javascript" src="js/mobile.js"></script>
 
 </head>
 <body>
@@ -70,7 +69,7 @@ mysqli_query($link,$sql_del1) ;
           <li><a href="warehouse.php">คลังอุปกรณ์(ของบริษัท)</a></li>
         </ul>
       </li>
-      <li><a href="#">Vander</a>
+      <li><a href="#">Vender</a>
         <ul>
           <li><a href="newvender.php">เพิ่ม Vender ใหม่</a></li>
           <li><a href="oldvender.php">แก้ไขข้อมูล Vender</a></li>
@@ -81,12 +80,14 @@ mysqli_query($link,$sql_del1) ;
   </div>
 
   <div id="body">
-
-		<h1>ลบรายการที่เลือกแล้ว</h1>
-		<br>
-		<li><a href="oldcustomers.php">ค้นหาลูกค้า</a></li>
-		<li><a href="newcustomers.php">เพิ่มลูกค้าใหม่</a></li>
-		</br>
+<br><br><br><br><br>
+		<center><h1>ลบรายการที่เลือกแล้ว</h1></center>
+    <br><br><br>
+    <form action="oldemployee.php">
+      <center><input type="submit" name="gooldemployee" id="send" value="ค้นหาพนักงาน" /></center></form>
+      <form action="newemployee.php">
+        <center><input type="submit" name="gotonewemployee" id="send" value="เพิ่มพนักงานใหม่" /></center></form>
+<br><br><br>
 	</div>
 </body>
 </html>

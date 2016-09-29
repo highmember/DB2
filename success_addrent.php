@@ -1,3 +1,4 @@
+<!doctype html>
 <?php session_start();
 $hostname = "mysql.hostinger.in.th";
 $user = "u967435075_joker";
@@ -17,7 +18,7 @@ $descript = $_POST['descript'];
 $price = $_POST['price'];
 $date = $_POST['date'];
 $pay = $price + $result['proj_curr_payment'];
-$price = $result['proj_price'] - $pay; 
+$price = $result['proj_price'] - $pay;
 $sql_add = "insert into rent set
 proj_id = '$id' , rent_descript = '$descript' , rent_price = '$price' , rent_date = '$date'";
 
@@ -35,7 +36,6 @@ mysqli_query($link,$sql_add) ;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-  <script type="text/javascript" src="js/mobile.js"></script>
 </head>
 <body>
   <div id="header">
@@ -74,7 +74,7 @@ mysqli_query($link,$sql_add) ;
           <li><a href="warehouse.php">คลังอุปกรณ์(ของบริษัท)</a></li>
         </ul>
       </li>
-      <li><a href="#">Vander</a>
+      <li><a href="#">Vender</a>
         <ul>
           <li><a href="newvender.php">เพิ่ม Vender ใหม่</a></li>
           <li><a href="oldvender.php">แก้ไขข้อมูล Vender</a></li>
@@ -84,11 +84,13 @@ mysqli_query($link,$sql_add) ;
   </ul>
 </div>
 <div id="body">
-  <h1>ทำรายการสำเร็จ</h1>
-  <br />
-  <li><a href="rent.php">ค้นหารายการเช่า</a></li>
-  </br>
+  <br><br><br><br><br><br>
+  <center><h1>ทำรายการสำเร็จ</h1></center>
+  <br><br><br>
+  <form action="rent.php">
+    <center><input type="submit" name="gotooldcustomer" id="send" value="ค้นหารายการเช่า" /></center></form>
+
+  <br><br><br>
 </div>
-<p>&nbsp;</p>
 </body>
 </html>
