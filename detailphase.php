@@ -1,3 +1,4 @@
+<!doctype html> //finish
 <?php session_start();
 $hostname = "mysql.hostinger.in.th";
 $user = "u967435075_joker";
@@ -73,38 +74,36 @@ echo $sql;
       <li><a href="show_audit.php">บัญชี</a></li>
     </ul>
   </div>
-
+<br><br><br><br><br>
 <div id="body">
 
-
-
-<table border="1">
+<center><table>
 	<tr>
-		<th scope="col">รหัสงาน</th>
-		<th scope="col">เฟสที่</th>
-		<th scope="col">รายละเอียดเฟส</th>
-		<th scope="col">วันเริ่มเฟส</th>
-		<th scope="col">วันจบเฟส</th>
-		<th scope="col">ราคาต่อเฟส</th>
-		<th scope="col">รายรับต่อเฟส</th>
-		<th scope="col">รายจ่ายต่อเฟส</th>
-		<th scope="col">สถานะ</th>
-		<th scope="col">หมายเหคุ</th>
+		<th >รหัสงาน</th>
+		<th >เฟสที่</th>
+		<th >รายละเอียดเฟส</th>
+		<th >วันเริ่มเฟส</th>
+		<th >วันจบเฟส</th>
+		<th >ราคาต่อเฟส</th>
+		<th >รายรับต่อเฟส</th>
+		<th >รายจ่ายต่อเฟส</th>
+		<th >สถานะ</th>
+		<th >หมายเหคุ</th>
 	</tr>
 <?php
 
 $hostname1 = "mysql.hostinger.in.th";
-$user1 = "u967435075_joker"; 
-$password1 = "joker11"; 
-$dbname1 = "u967435075_song"; 
-$tblname1 = "phase"; 
+$user1 = "u967435075_joker";
+$password1 = "joker11";
+$dbname1 = "u967435075_song";
+$tblname1 = "phase";
 $link1 = mysqli_connect($hostname1,$user1,$password1,$dbname1);
 mysqli_query($link1,"SET NAMES utf8");
 $id1 = $_REQUEST['id'];
 $sql1 = "select * from `" . $tblname1 . "`;";
 $dbquery1 = mysqli_query($link1, $sql1);
 $num_rows1 = mysqli_num_rows($dbquery1);
-$i=0; 
+$i=0;
 
  while($i < $num_rows1)
  {
@@ -124,13 +123,14 @@ $i=0;
 	echo "<td>$result1[phase_payment]</td>" ;
 	echo "<td>$result1[phase_status]</td>" ;
 	echo "<td>$result1[phase_note]</td>" ;
-	echo '</tr>'; 
+	echo '</tr>';
 	echo '</ul>';
 	}
 	$i++;
  }
  ?>
  </table>
+ </center>
 </div>
 
 </body>

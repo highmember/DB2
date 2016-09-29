@@ -1,3 +1,4 @@
+<!doctype html> //finish
 <?php
 $hostname = "mysql.hostinger.in.th";
 $user = "u967435075_joker";
@@ -84,7 +85,7 @@ $result = mysqli_fetch_array($dbquery);
         <tab2>
         : </b>
       <input type="readonly" name="id" id ="readonly"  value="<?=$result['emp_id']?>">
-    
+
     <p><b>วันที่ออกบิล : </b>
       <input name="date" type="text" id="date" value="<?=$result['billsa_date']?>" />
     </p>

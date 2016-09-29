@@ -66,8 +66,8 @@ $i=0;
       <li><a href="show_audit.php">บัญชี</a></li>
     </ul>
   </div>
+  <br><br><br><br><br>
 <div id= "body">
-<br><br><br><br><br>
 <center><h1>ค้นหาพนักงาน</h1></center>
 <br><br><br>
 <form name="frmSearch" method="post" action="search_salary.php">

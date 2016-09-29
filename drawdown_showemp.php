@@ -1,16 +1,17 @@
+<!doctype html> //finish
 <?php session_start();
 $hostname = "mysql.hostinger.in.th";
-$user = "u967435075_joker"; 
-$password = "joker11"; 
-$dbname = "u967435075_song"; 
-$tblname = "employee"; 
+$user = "u967435075_joker";
+$password = "joker11";
+$dbname = "u967435075_song";
+$tblname = "employee";
 $link = mysqli_connect($hostname,$user,$password,$dbname);
 mysqli_query($link,"SET NAMES utf8");
 $id = $_REQUEST['id'];
 $sql = "select * from `" . $tblname . "`;";
 $dbquery = mysqli_query($link, $sql);
 $num_rows = mysqli_num_rows($dbquery);
-$i=0; 
+$i=0;
 ?>
 <html>
 <head>
@@ -18,9 +19,6 @@ $i=0;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width : 568px)">
-  <link rel="stylesheet" type="text/css" href="css/dropdown.css">
-  <script type="text/javascript" src="js/mobile.js"></script>
 </head>
 <body>
   <div id="header">
@@ -70,22 +68,20 @@ $i=0;
 	<br />
 	<br />
   </div>
-  
-<ul>
-<br />
-<br />
-<table border="1">
+
+<div id="body">
+  <br><br><br><br><br>
+<center><table >
 	<tr>
-    	
-		<th scope="col">รหัสพนักงาน</th>
-        <th scope="col">วันที่ปัจจุบัน</th>
-		<th scope="col">ชื่อ - นามสกุล</th>
-        <th scope="col">เบอร์โทร</th>
-        <th scope="col">รายได้/วัน</th>
-		<th scope="col">รายได้/week</th>
-        <th scope="col">จำนวนวันทำงาน</th>
-        <th scope="col">ประวัติการเบิก</th>
-        <th scope="col">เบิก</th>
+		<th >รหัสพนักงาน</th>
+        <th >วันที่ปัจจุบัน</th>
+		<th >ชื่อ - นามสกุล</th>
+        <th >เบอร์โทร</th>
+        <th >รายได้/วัน</th>
+		<th >รายได้/week</th>
+        <th >จำนวนวันทำงาน</th>
+        <th >ประวัติการเบิก</th>
+        <th >เบิก</th>
 	</tr>
 <?php
  while($i < $num_rows)
@@ -105,14 +101,15 @@ $i=0;
 	echo "<td>$result[emp_tot_work]</td>" ;
 	echo "<td><a href = 'show_drawdown.php?id=$result[emp_id]'>ประวัติการเบิก</a></td>"  ;
 	echo "<td><a href = 'new_drawdown.php?id=$result[emp_id]'>เบิก</a></td>"  ;
-	echo '</tr>'; 
+	echo '</tr>';
 	echo '</ul>';
 	}
 	$i++;
  }
  ?>
- </table>
-</ul>
+  </table>
+ </center>
+</div>
 
 </body>
 </html>

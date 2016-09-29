@@ -1,3 +1,4 @@
+<!doctype html> //finish
 <?php session_start();
 $hostname = "mysql.hostinger.in.th";
 $user = "u967435075_joker";
@@ -109,5 +110,3 @@ mysqli_close($link);
 
 </body>
 </html>
-
-

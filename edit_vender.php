@@ -1,4 +1,4 @@
-<!doctype html>
+<!doctype html> //finish
 <?php
 $hostname = "mysql.hostinger.in.th";
 $user = "u967435075_joker";
@@ -79,13 +79,13 @@ $result = mysqli_fetch_array($dbquery);
     <h1>แก้ไขข้อมูลvender</h1></center>
   <br><br><br>
   <form id='form1' name='form1' method='post' action='success_editvender.php'>
-    <p><b>รหัสvender  
+    <p><b>รหัสvender
         <tab2>: </b><input type="text" name="id" id ="readonly" readonly="readonly" readonly value="<?=$result['ven_id']?>">
     <p><b>ชื่อบริษัท
         <tab2>
         : </b>
       <input type="text" name="name_company" id ="name_company"  value="<?=$result['ven_name_company']?>">
-    
+
     <p><b>ติดต่อ : </b>
       <input name="contact" type="text" id="contact" value="<?=$result['ven_contact']?>" />
     </p>

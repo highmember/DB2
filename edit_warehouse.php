@@ -1,3 +1,4 @@
+<!doctype html> //finish
 <?php
 $hostname = "mysql.hostinger.in.th";
 $user = "u967435075_joker";
@@ -78,18 +79,18 @@ $result = mysqli_fetch_array($dbquery);
     <h1>แก้ไขข้อมูลคลังสินค้า</h1></center>
   <br><br><br>
   <form id='form1' name='form1' method='post' action='success_editwarehouse.php'>
-    <p><b>รหัสคลังสินค้า  
-        <tab2>: </b><input type="readonly" name="id" id ="readonly" readonly="readonly" readonly value="<?=$result['wh_id']?>">    
+    <p><b>รหัสคลังสินค้า
+        <tab2>: </b><input type="readonly" name="id" id ="readonly" readonly="readonly" readonly value="<?=$result['wh_id']?>">
     <p><b>รายละเอียด
         <tab2>
         : </b>
       <input type="text" name="descript" id ="descript" value="<?=$result['wh_descript']?>">
-    
+
     <p><b>จำนวน
         <tab2>
 : </b>
       <input type="text" name="num" id ="num" value="<?=$result['wh_num']?>">
-    
+
     <p><br>
     </p>
     <center>

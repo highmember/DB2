@@ -1,15 +1,16 @@
+<!doctype html> //finish
 <?php
 $hostname = "mysql.hostinger.in.th";
-$user = "u967435075_joker"; 
-$password = "joker11"; 
-$dbname = "u967435075_song"; 
-$tblname = "employee"; 
+$user = "u967435075_joker";
+$password = "joker11";
+$dbname = "u967435075_song";
+$tblname = "employee";
 $link = mysqli_connect($hostname,$user,$password,$dbname);
 mysqli_query($link,"SET NAMES utf8");
 $sql = "select * from `" . $tblname . "`;";
 $dbquery = mysqli_query($link, $sql);
 $num_rows = mysqli_num_rows($dbquery);
-$i=0; 
+$i=0;
 ?>
 
 <html>
@@ -18,9 +19,6 @@ $i=0;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width : 568px)">
-  <link rel="stylesheet" type="text/css" href="css/dropdown.css">
-  <script type="text/javascript" src="js/mobile.js"></script>
 </head>
 <body>
   <div id="header">
@@ -68,14 +66,15 @@ $i=0;
       <li><a href="show_audit.php">บัญชี</a></li>
     </ul>
   </div>
-<br>
-<br>
 
-
+<div id="body">
+  <br><br><br><br><br>
+  <center><h1>เบิกเงิน</h1></center>
+  <br><br><br>
+<center>
 <form name="frmSearch" method="post" action="search_drawdown.php">
-  <table width="599" border="1">
-    <tr>
-      <th>ตัวเลือกค้นหา 
+
+      <th>ตัวเลือกค้นหา
         <select name="ddlSelect" id="ddlSelect">
           <option>- เลือก -</option>
           <option value="emp_id" <?if($_POST["ddlSelect"]=="emp_id"){echo"selected";}?>>รหัส employee</option>
@@ -84,17 +83,15 @@ $i=0;
 		คำค้นหา
         <input name="txtKeyword" type="text" id="txtKeyword" value="<?=$_POST["txtKeyword"];?>">
       <input type="submit" value="ค้นหา"></th>
-    </tr>
-  </table>
 </form>
-
-<table border="1">
+<br><br><br>
+<table>
 	<tr>
-		<th scope="col">รหัส พนักงาน</th>
-		<th scope="col">ชื่อ - นามสกุล</th>
-        <th scope="col">เบอร์โทร</th>
+		<th >รหัส พนักงาน</th>
+		<th >ชื่อ - นามสกุล</th>
+        <th >เบอร์โทร</th>
 	</tr>
-	
+
 <?php
 while ($i < $num_rows)
 {
@@ -105,15 +102,16 @@ echo '<tr>';
 echo "<td><a href = 'drawdown_showemp.php?id=$result[emp_id]'>$result[emp_id]</a></td>" ;
 echo "<td><a href = 'drawdown_showemp.php?id=$result[emp_id]'>$result[emp_fname]</a>   <a href = 'drawdown_showemp.php?id=$result[emp_id]'>$result[emp_lname]</a></td>" ;
 echo "<td><a href = 'drawdown_showemp.php?id=$result[emp_id]'>$result[emp_tel]</a></td>" ;
-echo '</tr>'; 
+echo '</tr>';
 echo '</ul>';
 $i++;
 }
 ?>
-<table>
+</center>
+</table>
 <br>
 <br>
-
+</div>
 
 </body>
 </html>
@@ -121,4 +119,3 @@ $i++;
 <?php
 mysqli_close($link);
 ?>
-

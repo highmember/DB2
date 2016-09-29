@@ -1,4 +1,4 @@
-<!doctype html>
+<!doctype html> //finish
 <?php
 $hostname = "mysql.hostinger.in.th";
 $user = "u967435075_joker";
@@ -79,13 +79,13 @@ $result = mysqli_fetch_array($dbquery);
     <h1>แก้ไขข้อมูลการเช่า</h1></center>
   <br><br><br>
   <form id='form1' name='form1' method='post' action='success_editrent.php'>
-    <p><b>รหัสงาน  
+    <p><b>รหัสงาน
         <tab2>: </b><input type="text" name="id" id ="readonly"  value="<?=$result['proj_id']?>">
     <p><b>รหัสการเช่า
         <tab2>
         : </b>
       <input type="text" name="id" id ="readonly"  value="<?=$result['rent_id']?>">
-    
+
     <p><b>รายละเอียดการเช่า : </b>
       <input name="descript" type="text" id="descript" value="<?=$result['rent_descript']?>" />
     </p>

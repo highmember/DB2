@@ -1,4 +1,4 @@
-<!doctype html>
+<!doctype html> //finish
 <?php
 $hostname = "mysql.hostinger.in.th";
 $user = "u967435075_joker";
@@ -79,8 +79,8 @@ $result = mysqli_fetch_array($dbquery);
     <h1>แก้ไขข้อมูลแคทตาล็อค</h1></center>
   <br><br><br>
   <form id='form1' name='form1' method='post' action='success_editcatalog.php'>
-    <p><b>รหัสแคทตาล็อค  
-    <tab2>: </b><input type="readonly" name="cid" id ="readonly" readonly="readonly" readonly value="<?=$result['cat_id']?>">    
+    <p><b>รหัสแคทตาล็อค
+    <tab2>: </b><input type="readonly" name="cid" id ="readonly" readonly="readonly" readonly value="<?=$result['cat_id']?>">
     <p><b>รหัส vender
         <tab2>
         : </b>
@@ -89,7 +89,7 @@ $result = mysqli_fetch_array($dbquery);
         <tab2>
         : </b>
       <input type="text" name="descript" id ="descript" value="<?=$result['cat_descript']?>">
-    
+
     <p><b>ราคา/ชิ้น : </b>
       <input name="price_piece" type="text" id="price_piece" value="<?=$result['cat_price']?>" />
     </p>
