@@ -1,11 +1,10 @@
+<!doctype html>
 <html>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width : 568px)">
-  <link rel="stylesheet" type="text/css" href="css/dropdown.css">
-  <script type="text/javascript" src="js/mobile.js"></script>
+
 </head>
 <body>
   <div id="header">
@@ -44,7 +43,7 @@
           <li><a href="warehouse.php">คลังอุปกรณ์(ของบริษัท)</a></li>
         </ul>
       </li>
-      <li><a href="#">Vander</a>
+      <li><a href="#">Vender</a>
         <ul>
           <li><a href="newvender.php">เพิ่ม Vender ใหม่</a></li>
           <li><a href="oldvender.php">แก้ไขข้อมูล Vender</a></li>
@@ -53,72 +52,77 @@
       <li><a href="show_audit.php">บัญชี</a></li>
     </ul>
   </div>
+
+
+  <div id = "body">
+    <br><br><br><br><br>
+    <center><h1>ค้นหาสินค้า</h1></center>
+    <br><br><br>
 <form name="frmSearch" method="post" action="<?=$_SERVER['SCRIPT_NAME'];?>">
-  <table width="599" border="1">
-    <tr>
-      <th>ตัวเลือกค้นหา 
+  <center><b>ตัวเลือกค้นหา : </b>
         <select name="ddlSelect" id="ddlSelect">
-          <option>- เลือก -</option>
+          <option> - เลือก - </option>
           <option value="wh_id" <?if($_POST["ddlSelect"]=="wh_id"){echo"selected";}?>>รหัสแคทตาล็อก</option>
           <option value="wh_descript" <?if($_POST["ddlSelect"]=="wh_descript"){echo"selected";}?>>รายละเอียดสินค้า</option>
-        </select>
-		คำค้นหา
+        </select><tab3>
+		        <b>คำค้นหา : </b>
         <input name="txtKeyword" type="text" id="txtKeyword" value="<?=$_POST["txtKeyword"];?>">
-      <input type="submit" value="ค้นหา"></th>
-    </tr>
-  </table>
+      <input type="submit" value="ค้นหา"></center>
+<br><br><br>
 </form>
 
 <?
 
 	$hostname = "mysql.hostinger.in.th";
-	$user = "u967435075_joker"; 
-	$password = "joker11"; 
-	$dbname = "u967435075_song"; 
+	$user = "u967435075_joker";
+	$password = "joker11";
+	$dbname = "u967435075_song";
 	$link = mysqli_connect($hostname,$user,$password,$dbname);
 	mysqli_query($link,"SET NAMES utf8");
 	$strSQL = "SELECT * FROM warehouse ";
 	if($_POST["ddlSelect"] != "" and  $_POST["txtKeyword"]  != '')
 	{
 	  $strSQL .= " WHERE ".$_POST["ddlSelect"]." LIKE '%".$_POST["txtKeyword"]."%'  ";
-	}	
+	}
 
 
 	$dbquery = mysqli_query($link, $strSQL) or die ("กรุณาเลือกตัวเลือกค้นหา");
 
 	$i=0;
-	
+
 	while($result = mysqli_fetch_array($dbquery))
 	{
 	 if($i==0){
 		 ?>
-		 <table width="600" border="1">
+		<center> <table>
 			<tr>
-				<th scope="col">รหัสคลังสินค้า</th>
-				<th scope="col">รายละเอียด</th>
-				<th scope="col">จำนวน</th>
+				<th >รหัสคลังสินค้า</th>
+				<th >รายละเอียด</th>
+				<th >จำนวน</th>
 			</tr>
 		 <?
 		 $i++;
 	 }
-		echo '<ul>';
+
 		echo '<tr>';
 		echo "<td><a href = 'show_warehouse.php?id=$result[wh_id]'>$result[wh_id]</a></td>" ;
 		echo "<td><a href = 'show_warehouse.php?id=$result[wh_id]'>$result[wh_descript]</a></td>" ;
 		echo "<td><a href = 'show_warehouse.php?id=$result[wh_id]'>$result[wh_num]</a></td>" ;
-		echo '</tr>'; 
-		echo '</ul>';
-	  
+		echo '</tr>';
+
+
 	}
 	?>
-	 </table>
+</center> </table>
 	 <?
 	if($i==0){
 		echo "ไม่พบข้อมูลที่ค้นหา";
 	}
-	
+
 	mysqli_close($link);
 ?>
+<br><br><br>
+</div>
 
 </body>
 </html>

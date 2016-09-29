@@ -117,6 +117,7 @@
 
 	mysqli_close($link);
 ?>
+<br><br><br>
 </div>
 </body>
 </html>

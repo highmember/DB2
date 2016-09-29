@@ -1,11 +1,9 @@
+<!doctype html>
 <html>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width : 568px)">
-  <link rel="stylesheet" type="text/css" href="css/dropdown.css">
-  <script type="text/javascript" src="js/mobile.js"></script>
 </head>
 <body>
   <div id="header">
@@ -44,7 +42,7 @@
           <li><a href="warehouse.php">คลังอุปกรณ์(ของบริษัท)</a></li>
         </ul>
       </li>
-      <li><a href="#">Vander</a>
+      <li><a href="#">Vender</a>
         <ul>
           <li><a href="newvender.php">เพิ่ม Vender ใหม่</a></li>
           <li><a href="oldvender.php">แก้ไขข้อมูล Vender</a></li>
@@ -53,52 +51,55 @@
       <li><a href="show_audit.php">บัญชี</a></li>
     </ul>
   </div>
+
+  <div id = "body">
+    <br><br><br><br><br>
+    <center><h1> ค้นหางาน </h1></center>
+    <br><br><br>
 <form name="frmSearch" method="post" action="<?=$_SERVER['SCRIPT_NAME'];?>">
-  <table width="599" border="1">
-    <tr>
-      <th>ตัวเลือกค้นหา 
+        <center> <b>ตัวเลือกค้นหา : </b>
         <select name="ddlSelect" id="ddlSelect">
           <option>- เลือก -</option>
           <option value="proj_id" <?if($_POST["ddlSelect"]=="proj_id"){echo"selected";}?>>รหัสงาน</option>
           <option value="CUS_ID" <?if($_POST["ddlSelect"]=="CUS_ID"){echo"selected";}?>>รหัสลูกค้า</option>
           <option value="proj_detail" <?if($_POST["ddlSelect"]=="proj_detail"){echo"selected";}?>>รายละเอียดงาน</option>
-        </select>
-		คำค้นหา
+        </select><tab3>
+		      <b>คำค้นหา : </b>
         <input name="txtKeyword" type="text" id="txtKeyword" value="<?=$_POST["txtKeyword"];?>">
-      <input type="submit" value="ค้นหา"></th>
-    </tr>
-  </table>
+      <input type="submit" value="ค้นหา"></center>
+
 </form>
+<br><br><br>
 
 <?
 
 	$hostname = "mysql.hostinger.in.th";
-	$user = "u967435075_joker"; 
-	$password = "joker11"; 
-	$dbname = "u967435075_song"; 
-	$tblname = "project"; 
+	$user = "u967435075_joker";
+	$password = "joker11";
+	$dbname = "u967435075_song";
+	$tblname = "project";
 	$link = mysqli_connect($hostname,$user,$password,$dbname);
 	mysqli_query($link,"SET NAMES utf8");
 	$strSQL = "SELECT * FROM project ";
 	if($_POST["ddlSelect"] != "" and  $_POST["txtKeyword"]  != '')
 	{
 	  $strSQL .= " WHERE ".$_POST["ddlSelect"]." LIKE '%".$_POST["txtKeyword"]."%'  ";
-	}	
+	}
 
 
 	$dbquery = mysqli_query($link, $strSQL) or die ("กรุณาเลือกตัวเลือกค้นหา");
 
 	$i=0;
-	
+
 	while($objResult = mysqli_fetch_array($dbquery))
 	{
 	 if($i==0){
 		 ?>
-		 <table width="600" border="1">
+		 <center><table>
 	  <tr>
-		<th width="98"> <div align="center">รหัสงาน </div></th>
-		<th width="91"> <div align="center">รหัสลูกค้า </div></th>
-		<th width="97"> <div align="center">รายละเอียดงาน </div></th>
+		<th>รหัสงาน </th>
+		<th>รหัสลูกค้า </th>
+		<th>รายละเอียดงาน </th>
 	  </tr>
 		 <?
 		 $i++;
@@ -108,17 +109,18 @@
 		echo "<td><a href = 'showprojdetail.php?id=$objResult[CUS_ID]'><div align='center'>$objResult[CUS_ID] </div></a></td>" ;
 		echo "<td><a href = 'showprojdetail.php?id=$objResult[CUS_ID]'><div align='center'>$objResult[proj_detail]</a></td>" ;
 	  echo "<tr>";
-	  
+
 	}
 	?>
-	 </table>
+</center></table>
 	 <?
 	if($i==0){
 		echo "ไม่พบข้อมูลที่ค้นหา";
 	}
-	
+
 	mysqli_close($link);
 ?>
-
+<br><br><br>
+</div>
 </body>
 </html>
