@@ -1,4 +1,4 @@
-<!doctype html> //ปุ่ม บันทึก ไม่ยุ ตรงกลาง
+<!doctype html>
 <?php
 $hostname = "mysql.hostinger.in.th";
 $user = "u967435075_joker";

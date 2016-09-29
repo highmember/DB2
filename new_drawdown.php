@@ -1,4 +1,4 @@
-<!doctype html>//finish
+<!doctype html>
 <? session_start();
 $id = $_SESSION['eeid'];
 ?>
