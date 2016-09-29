@@ -1,4 +1,4 @@
-<!doctype html>
+<!doctype html>//finish
 <?php
 $hostname = "mysql.hostinger.in.th";
 $user = "u967435075_joker";

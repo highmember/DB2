@@ -1,3 +1,4 @@
+<!doctype html>//finish
 <html>
 <head>
   <meta charset="utf-8">
@@ -73,9 +74,9 @@
 	         <input type="text" name="name" id="name" /><tab4>
 	          <b>นามสกุล : </b>
          <input type="text" name="surname" id="surname" /></p>
-      
+
 	      <p><b>เบอร์โทรศัพท์ : </b>
-         <input type="text" name="phone" id="phone" /> 
+         <input type="text" name="phone" id="phone" />
          </p>
 	      <p><b>ที่อยู่  : </b>
 	        <input type="text" name="address" id="address" />

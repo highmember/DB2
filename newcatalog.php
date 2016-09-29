@@ -1,10 +1,10 @@
+<!doctype html>//finish
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width : 568px)">
   <script type="text/javascript" src="js/mobile.js"></script>
 </head>
 <body>
@@ -75,41 +75,38 @@
       <input type="text" name="price_piece" id="price_piece">
       <tab4></p>
     <p><b>ส่วนลด
-        <tab3> 
+        <tab3>
         : </b>
     <input type="text" name="discount" id="discount"></p>
     <p><b>วันที่อัปเดท : </b>
       <input type="date" name="date_update" id="date_update"></p>
-    
+
         <br><br><br>
         <center><input type="submit" name="Add" id="Add" value="บันทึกข้อมูล"></center>
         <br>
         <br>
   </form>
-   <center><h1>เลือก vender เก่า </h1></center>
-	  <br><a href = "newvender.php">เพิ่ม vender ใหม่</a>
-<br>
-<br>
+   <center><h1>เลือก vender เก่า </h1><br><br>
+     <a href = "newvender.php">เพิ่ม vender ใหม่</a></center><br><br>
 <?php
 $hostname = "mysql.hostinger.in.th";
-$user = "u967435075_joker"; 
-$password = "joker11"; 
-$dbname = "u967435075_song"; 
-$tblname1 = "vender"; 
+$user = "u967435075_joker";
+$password = "joker11";
+$dbname = "u967435075_song";
+$tblname1 = "vender";
 $link1 = mysqli_connect($hostname,$user,$password,$dbname);
 mysqli_query($link1,"SET NAMES utf8");
 $sql1 = "select * from `" . $tblname1 . "`;";
 $dbquery1 = mysqli_query($link1, $sql1);
 $num_rows1 = mysqli_num_rows($dbquery1);
-$j=0; 
+$j=0;
 ?>
-<table border="1">
-	<tr>
-		<th scope="col">รหัส vender</th>
-		<th scope="col">ชื่อบริษัท</th>
-		<th scope="col">เบอร์โทรศัพท์</th>
-	</tr>
-	
+<center>
+<table>
+		<th >รหัส vender</th>
+		<th >ชื่อบริษัท</th>
+		<th >เบอร์โทรศัพท์</th>
+
 <?php
 while ($j < $num_rows1)
 {
@@ -120,14 +117,13 @@ echo '<tr>';
 echo "<td>$result1[ven_id]</a></td>" ;
 echo "<td>$result1[ven_name_company]</a></td>" ;
 echo "<td>$result1[ven_phone]</a></td>" ;
-echo '</tr>'; 
+echo '</tr>';
 echo '</ul>';
 $j++;
 }
 ?>
-<table>
-<br>
-<br>
+    </table>
+  </center>
   </div>
 </body>
 </html>

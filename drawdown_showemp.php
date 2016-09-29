@@ -65,12 +65,10 @@ $i=0;
       </li>
       <li><a href="show_audit.php">บัญชี</a></li>
     </ul>
-	<br />
-	<br />
   </div>
 
 <div id="body">
-  <br><br><br><br><br>
+<br><br><br><br><br><center><h1>เบิก</h1><br><br><br>
 <center><table >
 	<tr>
 		<th >รหัสพนักงาน</th>

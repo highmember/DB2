@@ -1,15 +1,16 @@
+<!doctype html>//finish
 <?php
 $hostname = "mysql.hostinger.in.th";
-$user = "u967435075_joker"; 
-$password = "joker11"; 
-$dbname = "u967435075_song"; 
-$tblname = "vender"; 
+$user = "u967435075_joker";
+$password = "joker11";
+$dbname = "u967435075_song";
+$tblname = "vender";
 $link = mysqli_connect($hostname,$user,$password,$dbname);
 mysqli_query($link,"SET NAMES utf8");
 $sql = "select * from `" . $tblname . "`;";
 $dbquery = mysqli_query($link, $sql);
 $num_rows = mysqli_num_rows($dbquery);
-$i=0; 
+$i=0;
 ?>
 
 <html>
@@ -18,9 +19,6 @@ $i=0;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width : 568px)">
-  <link rel="stylesheet" type="text/css" href="css/dropdown.css">
-  <script type="text/javascript" src="js/mobile.js"></script>
 </head>
 <body>
   <div id="header">
@@ -68,14 +66,10 @@ $i=0;
       <li><a href="show_audit.php">บัญชี</a></li>
     </ul>
   </div>
-<br>
-<br>
-
-
+<div id="body">
+<br><br><br><br><br><center><h1>ค้นหา Vender เก่า</h1><br><br><br>
 <form name="frmSearch" method="post" action="search_ven.php">
-  <table width="599" border="1">
-    <tr>
-      <th>ตัวเลือกค้นหา 
+      <th>ตัวเลือกค้นหา
         <select name="ddlSelect" id="ddlSelect">
           <option>- เลือก -</option>
           <option value="ven_id" <?if($_POST["ddlSelect"]=="ven_id"){echo"selected";}?>>รหัส vender</option>
@@ -84,17 +78,14 @@ $i=0;
 		คำค้นหา
         <input name="txtKeyword" type="text" id="txtKeyword" value="<?=$_POST["txtKeyword"];?>">
       <input type="submit" value="ค้นหา"></th>
-    </tr>
-  </table>
-</form>
 
-<table border="1">
-	<tr>
-		<th scope="col">รหัส vender</th>
-		<th scope="col">ชื่อบริษัท</th>
-		<th scope="col">เบอร์โทรศัพท์</th>
-	</tr>
-	
+</form>
+<br><br><br>
+<table>
+		<th >รหัส vender</th>
+		<th >ชื่อบริษัท</th>
+		<th >เบอร์โทรศัพท์</th>
+
 <?php
 while ($i < $num_rows)
 {
@@ -105,14 +96,14 @@ echo '<tr>';
 echo "<td><a href = 'show_vender.php?id=$result[ven_id]'>$result[ven_id]</a></td>" ;
 echo "<td><a href = 'show_vender.php?id=$result[ven_id]'>$result[ven_name_company]</a></td>" ;
 echo "<td><a href = 'show_vender.php?id=$result[ven_id]'>$result[ven_phone]</a></td>" ;
-echo '</tr>'; 
+echo '</tr>';
 echo '</ul>';
 $i++;
 }
 ?>
-<table>
-<br>
-<br>
+</table>
+</center>
+</div>
 
 
 </body>
@@ -121,4 +112,3 @@ $i++;
 <?php
 mysqli_close($link);
 ?>
-

@@ -1,15 +1,16 @@
-<?php 
+<!doctype html>//finish
+<?php
 $hostname = "mysql.hostinger.in.th";
-$user = "u967435075_joker"; 
-$password = "joker11"; 
-$dbname = "u967435075_song"; 
-$tblname = "project"; 
+$user = "u967435075_joker";
+$password = "joker11";
+$dbname = "u967435075_song";
+$tblname = "project";
 $link = mysqli_connect($hostname,$user,$password,$dbname);
 mysqli_query($link,"SET NAMES utf8");
 $sql = "select * from `" . $tblname . "`;";
 $dbquery = mysqli_query($link, $sql);
 $num_rows = mysqli_num_rows($dbquery);
-$i=0; 
+$i=0;
 
 ?>
 
@@ -19,9 +20,6 @@ $i=0;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width : 568px)">
-  <link rel="stylesheet" type="text/css" href="css/dropdown.css">
-  <script type="text/javascript" src="js/mobile.js"></script>
 </head>
 <body>
   <div id="header">
@@ -70,14 +68,11 @@ $i=0;
         </ul>
     </ul>
   </div>
-<br>
-<br>
-
+<div id="body">
+<br><br><br><br><br><center><h1>ซื้อของ</h1><br><br><br>
 
 <form name="frmSearch" method="post" action="searchpurchase.php">
-  <table width="599" border="1">
-    <tr>
-      <th>ตัวเลือกค้นหา 
+      <th>ตัวเลือกค้นหา
         <select name="ddlSelect" id="ddlSelect">
           <option>- เลือก -</option>
           <option value="proj_id" <?if($_POST["ddlSelect"]=="proj_id"){echo"selected";}?>>รหัสงาน</option>
@@ -87,17 +82,13 @@ $i=0;
 		คำค้นหา
         <input name="txtKeyword" type="text" id="txtKeyword" value="<?=$_POST["txtKeyword"];?>">
       <input type="submit" value="ค้นหา"></th>
-    </tr>
-  </table>
 </form>
+<br><br><br>
+<table>
+		<th >รหัสงาน</th>
+		<th >รหัสลูกค้า</th>
+		<th >รายละเอียดงาน</th>
 
-<table border="1">
-	<tr>
-		<th scope="col">รหัสงาน</th>
-		<th scope="col">รหัสลูกค้า</th>
-		<th scope="col">รายละเอียดงาน</th>
-	</tr>
-	
 <?php
 while ($i < $num_rows)
 {
@@ -108,20 +99,17 @@ echo '<tr>';
 echo "<td><a href = 'showprojpurchase.php?id=$result[CUS_ID]'>$result[proj_id]</a></td>" ;
 echo "<td><a href = 'showprojpurchase.php?id=$result[CUS_ID]'>$result[CUS_ID]</a></td>" ;
 echo "<td><a href = 'showprojpurchase.php?id=$result[CUS_ID]'>$result[proj_detail]</a></td>" ;
-echo '</tr>'; 
+echo '</tr>';
 echo '</ul>';
 $i++;
 }
 ?>
-<table>
-<br>
-<br>
-
-
+</table>
+</center>
+</div>
 </body>
 </html>
 
 <?php
 mysqli_close($link);
 ?>
-

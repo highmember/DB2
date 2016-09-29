@@ -1,4 +1,5 @@
-<? session_start(); 
+<!doctype html>//finish
+<? session_start();
 $id = $_SESSION['eeid'];
 ?>
 <html>
@@ -7,8 +8,6 @@ $id = $_SESSION['eeid'];
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width : 568px)">
-  <script type="text/javascript" src="js/mobile.js"></script>
 </head>
 <body>
   <div id="header">
@@ -68,7 +67,7 @@ $id = $_SESSION['eeid'];
     <br>
     <br>
     <form id='form1' name='form1' method='post' action='success_newdrawdown.php'>
-  
+
       <p><b>รหัสพนักงาน
         <tab2>
         : </b>

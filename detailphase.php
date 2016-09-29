@@ -74,9 +74,8 @@ echo $sql;
       <li><a href="show_audit.php">บัญชี</a></li>
     </ul>
   </div>
-<br><br><br><br><br>
 <div id="body">
-
+<br><br><br><br><br><center><h1>รายระเอียด</h1><br><br><br>
 <center><table>
 	<tr>
 		<th >รหัสงาน</th>

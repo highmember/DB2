@@ -1,15 +1,16 @@
+<!doctype html>//finish
 <?php
 $hostname = "mysql.hostinger.in.th";
-$user = "u967435075_joker"; 
-$password = "joker11"; 
-$dbname = "u967435075_song"; 
-$tblname = "project"; 
+$user = "u967435075_joker";
+$password = "joker11";
+$dbname = "u967435075_song";
+$tblname = "project";
 $link = mysqli_connect($hostname,$user,$password,$dbname);
 mysqli_query($link,"SET NAMES utf8");
 $sql = "select * from `" . $tblname . "`;";
 $dbquery = mysqli_query($link, $sql);
 $num_rows = mysqli_num_rows($dbquery);
-$i=0; 
+$i=0;
 ?>
 
 <html>
@@ -18,9 +19,6 @@ $i=0;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width : 568px)">
-  <link rel="stylesheet" type="text/css" href="css/dropdown.css">
-  <script type="text/javascript" src="js/mobile.js"></script>
 </head>
 <body>
   <div id="header">
@@ -68,32 +66,24 @@ $i=0;
       <li><a href="show_audit.php">บัญชี</a></li>
     </ul>
   </div>
-<br>
-<br>
-
-
-<form name="form1" method="post" action="search.php"> 
-<table border="0" cellspacing="5" cellpadding="0">
-<tr> 
+<div id="body">
+<br><br><br><br><br><center><h1>เช่า</h1><br><br><br>
+<form name="form1" method="post" action="search.php">
 <td>ค้นหาข้อมูล : </td>
-<td> 
+<td>
 <input type="text" name="search">
 </td>
-<td> 
+<td>
 <input type="submit" name="Submit" value="ค้นหา">
 </td>
-</tr>
-</table>
 </form>
 
+<table>
+		<th >รหัสงาน</th>
+        <th >รหัสลูกค้า</th>
+        <th >รายละเอียดงาน</th>
 
-<table border="1">
-	<tr>
-		<th scope="col">รหัสงาน</th>
-        <th scope="col">รหัสลูกค้า</th>
-        <th scope="col">รายละเอียดงาน</th>
-	</tr>
-	
+
 <?php
 while ($i < $num_rows)
 {
@@ -105,12 +95,14 @@ echo "<td><a href = 'rent_showselectproj.php?id=$result[proj_id]'>$result[proj_i
 echo "<td><a href = 'rent_showselectproj.php?id=$result[proj_id]'>$result[CUS_ID]</a></td>";
 echo "<td><a href = 'rent_showselectproj.php?id=$result[proj_id]'>$result[proj_detail]</a></td>";
 
-echo '</tr>'; 
+echo '</tr>';
 echo '</ul>';
 $i++;
 }
 ?>
-<table>
+</table>
+</center>
+</div>
 <br>
 <br>
 
@@ -121,4 +113,3 @@ $i++;
 <?php
 mysqli_close($link);
 ?>
-

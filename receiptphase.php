@@ -1,3 +1,4 @@
+<!doctype html>//finish
 <?php session_start();
 $hostname = "mysql.hostinger.in.th";
 $user = "u967435075_joker";
@@ -72,12 +73,8 @@ echo $sql;
     </ul>
   </div>
 
-<div id="body">
-<br>
-<br>
-<br>
-<br>
-<br>
+  <div id="body">
+  <br><br><br><br><br>
   <center><h1>แก้ไขข้อมูลเฟส</h1></center>
   <br><br><br>
   <form id='form1' name='form1' method='post' action='successphasereceipt.php'>
@@ -100,5 +97,3 @@ mysqli_close($link);
 
 </body>
 </html>
-
-

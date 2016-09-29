@@ -1,4 +1,4 @@
-<!doctype html>
+<!doctype html>//finish
 <?php
 $hostname = "mysql.hostinger.in.th";
 $user = "u967435075_joker";
@@ -68,10 +68,8 @@ $i=0;
     </ul>
   </div>
 <div id = 'body'>
-<br><br><br><br><br>
-
+<br><br><br><br><br><center><h1>ค้นหาลูกค้าเก่า</h1><br><br><br>
 <form name="frmSearch" method="post" action="search.php">
-    <>
       <center><b>ตัวเลือกค้นหา</b>
         <select name="ddlSelect" id="ddlSelect">
           <option>- เลือก -</option>
@@ -107,10 +105,7 @@ $i++;
 }
 ?>
 </center><table>
-<br>
-<br>
-
-
+</div>
 </body>
 </html>
 

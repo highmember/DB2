@@ -1,10 +1,10 @@
+<!doctype html>//finish
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width : 568px)">
   <script type="text/javascript" src="js/mobile.js"></script>
 </head>
 <body>
@@ -73,7 +73,7 @@
     <input type="text" name="address" id="address"></p>
     <p><b>เบอร์โทรศัพท์ : </b>
     <input type="text" name="phone" id="phone"></p>
-    
+
         <br><br><br>
         <center><input type="submit" name="Add" id="Add" value="บันทึกข้อมูล"></center>
         <br>

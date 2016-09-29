@@ -1,16 +1,17 @@
+<!doctype html>//finish
 <?php
 $hostname = "mysql.hostinger.in.th";
-$user = "u967435075_joker"; 
-$password = "joker11"; 
-$dbname = "u967435075_song"; 
-$tblname = "project"; 
+$user = "u967435075_joker";
+$password = "joker11";
+$dbname = "u967435075_song";
+$tblname = "project";
 $link = mysqli_connect($hostname,$user,$password,$dbname);
 mysqli_query($link,"SET NAMES utf8");
 $id = $_REQUEST['id'];
 $sql = "select * from `" . $tblname . "`;";
 $dbquery = mysqli_query($link, $sql);
 $num_rows = mysqli_num_rows($dbquery);
-$i=0; 
+$i=0;
 ?>
 <html>
 <head>
@@ -18,9 +19,6 @@ $i=0;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width : 568px)">
-  <link rel="stylesheet" type="text/css" href="css/dropdown.css">
-  <script type="text/javascript" src="js/mobile.js"></script>
 </head>
 <body>
   <div id="header">
@@ -67,28 +65,25 @@ $i=0;
       </li>
       <li><a href="show_audit.php">บัญชี</a></li>
     </ul>
-	<br />
-	<br />
   </div>
-  
-<ul>
-<br />
-<br />
-<table border="1">
-	<tr>
-		<th scope="col">รหัสงาน</th>
-        <th scope="col">รหัสลูกค้า</th>
-		<th scope="col">รายละเอียดงาน</th>
-        <th scope="col">วันเริ่มงาน</th>
-		<th scope="col">วันจบงาน</th>
-		<th scope="col">จำนวนเฟส</th>
-		<th scope="col">ราคางาน</th>
-        <th scope="col">รายได้ปัจจุบัน</th>
-        <th scope="col">รายจ่ายปัจจุบัน</th>
-        <th scope="col">รายได้สุทธิ</th>
-    	<th scope="col">รายการเช่า</th>
-    	<th scope="col">เพิ่ม</th>
-	</tr>
+
+<div id="body">
+<br><br><br><br><br><center><h1>ประวัติการเช่า</h1><br><br><br>
+
+<table>
+		<th >รหัสงาน</th>
+        <th >รหัสลูกค้า</th>
+		<th >รายละเอียดงาน</th>
+        <th >วันเริ่มงาน</th>
+		<th >วันจบงาน</th>
+		<th >จำนวนเฟส</th>
+		<th >ราคางาน</th>
+        <th >รายได้ปัจจุบัน</th>
+        <th >รายจ่ายปัจจุบัน</th>
+        <th >รายได้สุทธิ</th>
+    	<th >รายการเช่า</th>
+    	<th >เพิ่ม</th>
+
 <?php
  while($i < $num_rows)
  {
@@ -109,15 +104,15 @@ $i=0;
 	echo "<td>$result[proj_net_income]</td>" ;
 	echo "<td><a href = 'show_rent.php?id=$result[proj_id]'>รายการเช่า</a></td>"  ;
 	echo "<td><a href = 'add_rent.php?id=$result[proj_id]'>เพิ่ม</a></td>"  ;
-	echo '</tr>'; 
+	echo '</tr>';
 	echo '</ul>';
 	}
 	$i++;
  }
  ?>
  </table>
-</ul>
-
+</center>
+</div>
 </body>
 </html>
 

@@ -1,9 +1,9 @@
-<!doctype html>
+<!doctype html>//finish
 <?php
 $hostname = "mysql.hostinger.in.th";
 $user = "u967435075_joker";
 $password = "joker11";
-$dbname = "u967435075_song"; 
+$dbname = "u967435075_song";
 $tblname = "warehouse";
 $link = mysqli_connect($hostname,$user,$password,$dbname);
 mysqli_query($link,"SET NAMES utf8");
@@ -19,8 +19,6 @@ $result = mysqli_fetch_array($dbquery);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width : 568px)">
-  <script type="text/javascript" src="js/mobile.js"></script>
 </head>
 <body>
   <div id="header">
