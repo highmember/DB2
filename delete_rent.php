@@ -1,16 +1,17 @@
+<!doctype html> //finish
 <?php
 $hostname = "mysql.hostinger.in.th";
-$user = "u967435075_joker"; 
-$password = "joker11"; 
-$dbname = "u967435075_song"; 
-$tblname = "rent"; 
+$user = "u967435075_joker";
+$password = "joker11";
+$dbname = "u967435075_song";
+$tblname = "rent";
 $link = mysqli_connect($hostname,$user,$password,$dbname);
 mysqli_query($link,"SET NAMES utf8");
 $sql = "select * from `" . $tblname . "`;";
 $dbquery = mysqli_query($link, $sql);
 $num_rows = mysqli_num_rows($dbquery);
-$i=0; 
-if($_REQUEST['id'] != "") 
+$i=0;
+if($_REQUEST['id'] != "")
 {
 $del_id = $_REQUEST['id'];
 $sql_del = "delete from rent where rent_id = '$del_id';";
@@ -30,59 +31,15 @@ mysqli_query($link,$sql_del) ;
 
 </head>
 <body>
-  <div id="header">
-  <h1><span>Construction</span></h1>
-
-  </div>
-  <div id="dropdown">
-    <ul>
-       <li><a href="#">ลูกค้า</a>
-          <ul>
-            <li><a href="oldcustomers.php">ลูกค้าเก่า</a></li>
-            <li><a href="newcustomers.php">ลูกค้าใหม่</a></li>
-          </ul>
-      </li>
-      <li><a href="#">งาน</a>
-        <ul>
-          <li><a href="historywork.php">ดูประวัติ</a></li>
-          <li><a href="receipt.php">รับเงิน</a></li>
-          <li><a href="purchase.php">ซื้อของ</a></li>
-		  <li><a href="rent.php">เช่าของ</a></li>
-        </ul>
-      </li>
-      <li><a href="#">พนักงาน</a>
-        <ul>
-          <li><a href="newemployee.php">เพิ่มพนักงานใหม่</a></li>
-          <li><a href="oldemployee.php">ประวัตพนักงานเก่า</a></li>
-          <li><a href="drawdown.php">เบิกเงิน</a></li>
-          <li><a href="salary.php">เงินเดือน</a></li>
-          <li><a href="leave.php">ลา</a></li>
-          <li><a href="check.php">เช็คชื่อ</a></li>
-        </ul>
-      </li>
-      <li><a href="#">สินค้า/อุปกรณ์</a>
-        <ul>
-          <li><a href="catalog.php">แคทตาล็อคสินค้า</a></li>
-          <li><a href="warehouse.php">คลังอุปกรณ์(ของบริษัท)</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Vander</a>
-        <ul>
-          <li><a href="newvender.php">เพิ่ม Vender ใหม่</a></li>
-          <li><a href="oldvender.php">แก้ไขข้อมูล Vender</a></li>
-        </ul>
-      </li>
-      <li><a href="show_audit.php">บัญชี</a></li>
-    </ul>
-  </div>
-
+  <br><br><br><br><br><br><br><br><br><br>
   <div id="body">
 
-		<h1>ลบรายการที่เลือกแล้ว</h1>
-		<br>
+		<center><h1>ลบรายการสำเร็จแล้ว</h1>
+		<br><br><br>
 		<li><a href="rent.php">ค้นหารายการเช่า</a></li>
-  <li><a href="addrent.php">เพิ่มรายการเช่าใหม่</a></li>
-		</br>
+    <li><a href="add_rent.php">เพิ่มรายการเช่าใหม่</a></li>
+    <li><a href="index.php">กลับไปหน้าแรก</a></li>
+  </center>
 	</div>
 </body>
 </html>

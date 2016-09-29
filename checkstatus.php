@@ -1,22 +1,23 @@
+<!doctype html> //finish
 <?php session_start();
 $hostname = "mysql.hostinger.in.th";
 $user = "u967435075_joker";
 $password = "joker11";
 $dbname = "u967435075_song";
-$tblname = "employee"; 
+$tblname = "employee";
 $link = mysqli_connect($hostname,$user,$password,$dbname);
 mysqli_query($link,"SET NAMES utf8");
 $phid = $_SESSION['phid'];
 $sql = "select * from `" . $tblname . "`;";
 $dbquery = mysqli_query($link, $sql);
 $num_rows = mysqli_num_rows($dbquery);
-$i=0; 
+$i=0;
 if($_POST['Edit'])
 {
-	
-	
+
+
 	$date = $_POST['curr'];
-	
+
 	while ($i < $num_rows)
 	{
 		$status = $_POST['status' . $i];
@@ -29,10 +30,10 @@ if($_POST['Edit'])
 	 $result1 = mysqli_fetch_array($dbquery1);
 	 $num = $result['emp_tot_work'];
 	 $pay = $result['emp_inc_day'] + $result1['proj_curr_payment'];
-	 $price = $result1['proj_price'] - $pay; 
+	 $price = $result1['proj_price'] - $pay;
 	 $sqlincome = "UPDATE project SET proj_curr_payment = '$pay' , proj_net_income = '$price' where proj_id = '$phid' ";
 	 mysqli_query($link,$sqlincome);
-	 
+
 	 if($status==1){
 		 $num++;
 		  $sql_edit = "UPDATE employee SET emp_come_work = '$status' , emp_curr_date = '$date' , emp_tot_work = '$num' WHERE emp_id = '$id' ";
@@ -42,10 +43,10 @@ if($_POST['Edit'])
 	 }
 	 mysqli_query($link,$sql_edit);
 	 $i++;
-	 	
+
 	}
-	
-	
+
+
 }
 ?>
 
@@ -109,7 +110,7 @@ if($_POST['Edit'])
     <br><br><br><br><br>
 		<center><h1>บันทึกการเปลี่ยนแปลงแล้ว</h1></center>
 		<br><br><br>
-		<a href="showcheck.php">ตรวจสอบชั่วโมงงาน</a>
+		<center><a href="showcheck.php">ตรวจสอบชั่วโมงงาน</a></center>
     <br><br><br>
 	</div>
 </body>
