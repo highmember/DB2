@@ -1,16 +1,17 @@
-<?php 
+<!doctype html>
+<?php
 $hostname = "mysql.hostinger.in.th";
-$user = "u967435075_joker"; 
-$password = "joker11"; 
-$dbname = "u967435075_song"; 
-$tblname = "employee"; 
+$user = "u967435075_joker";
+$password = "joker11";
+$dbname = "u967435075_song";
+$tblname = "employee";
 $link = mysqli_connect($hostname,$user,$password,$dbname);
 mysqli_query($link,"SET NAMES utf8");
 $id = $_REQUEST['id'];
 $sql = "select * from `" . $tblname . "`;";
 $dbquery = mysqli_query($link, $sql);
 $num_rows = mysqli_num_rows($dbquery);
-$i=0; 
+$i=0;
 
 ?>
 <html>
@@ -19,9 +20,7 @@ $i=0;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width : 568px)">
-  <link rel="stylesheet" type="text/css" href="css/dropdown.css">
-  <script type="text/javascript" src="js/mobile.js"></script>
+
 </head>
 <body>
   <div id="header">
@@ -60,7 +59,7 @@ $i=0;
           <li><a href="warehouse.php">คลังอุปกรณ์(ของบริษัท)</a></li>
         </ul>
       </li>
-      <li><a href="#">Vander</a>
+      <li><a href="#">Vender</a>
         <ul>
           <li><a href="newvender.php">เพิ่ม Vender ใหม่</a></li>
           <li><a href="oldvender.php">แก้ไขข้อมูล Vender</a></li>
@@ -68,24 +67,24 @@ $i=0;
       </li>
       <li><a href="show_audit.php">บัญชี</a></li>
     </ul>
-	<br />
-	<br />
+
   </div>
-  
-<ul>
-<br />
-<br />
-<table border="1">
+
+<div id = "body">
+  <br><br><br><br><br>
+  <center><h1>ข้อมูลพนักงาน</h1></center>
+  <br><br><br>
+<center><table>
   <tr>
-    <th scope="col">รหัสพนักงาน</th>
-    <th scope="col">ชื่อ  - นามสกุล</th>
-    <th scope="col">เบอร์โทรศัพท์</th>
-    <th scope="col">วันที่</th>
-    <th scope="col">ลากิจ</th>
-    <th scope="col">ลาป่วย</th>
-    <th scope="col">ลาพักร้อน</th>
-    <th scope="col">จำนวนวันลา</th>
-    <th scope="col">ลา</th>
+    <th >รหัสพนักงาน</th>
+    <th >ชื่อ  - นามสกุล</th>
+    <th >เบอร์โทรศัพท์</th>
+    <th >วันที่</th>
+    <th >ลากิจ</th>
+    <th >ลาป่วย</th>
+    <th >ลาพักร้อน</th>
+    <th >จำนวนวันลา</th>
+    <th >ลา</th>
   </tr>
   <?php
  while($i < $num_rows)
@@ -93,7 +92,6 @@ $i=0;
 	$result = mysqli_fetch_array($dbquery);
 	if($result[emp_id]==$_GET['id'])
 	{
-	echo '<ul>';
 	echo '<tr>';
 	echo "<td>$result[emp_id]</td>" ;
 	echo "<td>$result[emp_fname]   $result[emp_lname]</td>" ;
@@ -104,16 +102,15 @@ $i=0;
 	echo "<td>$result[emp_lea_special]</td>" ;
 	echo "<td>$result[emp_tot_lea]</td>" ;
 	echo "<td><a href = 'add_leave.php?id=$result[emp_id]'>ลา</a></td>"  ;
-	echo '</tr>'; 
-	echo '</ul>';
-	
+	echo '</tr>';
+
 	}
 	$i++;
  }
  ?>
-</table>
-</ul>
-
+</center></table>
+<br><br><br>
+</div>
 </body>
 </html>
 

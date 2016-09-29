@@ -1,15 +1,16 @@
+<!doctype html>
 <?php
 $hostname = "mysql.hostinger.in.th";
-$user = "u967435075_joker"; 
-$password = "joker11"; 
-$dbname = "u967435075_song"; 
-$tblname = "employee"; 
+$user = "u967435075_joker";
+$password = "joker11";
+$dbname = "u967435075_song";
+$tblname = "employee";
 $link = mysqli_connect($hostname,$user,$password,$dbname);
 mysqli_query($link,"SET NAMES utf8");
 $sql = "select * from `" . $tblname . "`;";
 $dbquery = mysqli_query($link, $sql);
 $num_rows = mysqli_num_rows($dbquery);
-$i=0; 
+$i=0;
 ?>
 <html>
 <head>
@@ -17,9 +18,7 @@ $i=0;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width : 568px)">
-  <link rel="stylesheet" type="text/css" href="css/dropdown.css">
-  <script type="text/javascript" src="js/mobile.js"></script>
+
 </head>
 <body>
   <div id="header">
@@ -58,7 +57,7 @@ $i=0;
           <li><a href="warehouse.php">คลังอุปกรณ์(ของบริษัท)</a></li>
         </ul>
       </li>
-      <li><a href="#">Vander</a>
+      <li><a href="#">Vender</a>
         <ul>
           <li><a href="newvender.php">เพิ่ม Vender ใหม่</a></li>
           <li><a href="oldvender.php">แก้ไขข้อมูล Vender</a></li>
@@ -66,28 +65,27 @@ $i=0;
       </li>
       <li><a href="show_audit.php">บัญชี</a></li>
     </ul>
-	<br />
-	<br />
+
   </div>
-  
-<ul>
-<br />
-<br />
-<table border="1">
+
+<div id = "body">
+<br><br><br><br><br>
+<center><h1>ข้อมูลพนักงาน</h1></center>
+<br><br><br>
+<center><table>
 	<tr>
-		<th scope="col">รหัสพนักงาน</th>
-        <th scope="col">รหัสงาน</th>
-		<th scope="col">ชื่อ  - นามสกุล</th>
-        <th scope="col">เช็คชื่อ</th>
-        <th scope="col">วันที่ปัจจุบัน</th>
-        <th scope="col">จำนวนวันมาทำงาน</th>
+		<th >รหัสพนักงาน</th>
+    <th >รหัสงาน</th>
+		<th >ชื่อ  - นามสกุล</th>
+    <th >เช็คชื่อ</th>
+    <th >วันที่ปัจจุบัน</th>
+    <th >จำนวนวันมาทำงาน</th>
 	</tr>
 <?php
  while($i < $num_rows)
  {
 	$result = mysqli_fetch_array($dbquery);
 
-	echo '<ul>';
 	echo '<tr>';
 	echo "<td>$result[emp_id]</td>" ;
 	echo "<td>$result[proj_id]</td>" ;
@@ -95,15 +93,14 @@ $i=0;
 	echo "<td>$result[emp_come_work]</td>" ;
 	echo "<td>$result[emp_curr_date]</td>" ;
 	echo "<td>$result[emp_tot_work]</td>" ;
-	echo '</tr>'; 
-	echo '</ul>';
-	
+	echo '</tr>';
+
 	$i++;
  }
  ?>
- </table>
-</ul>
-
+ </center></table>
+<br><br><br>
+</div>
 </body>
 </html>
 
