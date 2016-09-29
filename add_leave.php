@@ -1,8 +1,9 @@
-<?php 
+<!doctype html> //finish
+<?php
 $hostname = "mysql.hostinger.in.th";
-$user = "u967435075_joker"; 
-$password = "joker11"; 
-$dbname = "u967435075_song"; 
+$user = "u967435075_joker";
+$password = "joker11";
+$dbname = "u967435075_song";
 $link = mysqli_connect($hostname,$user,$password,$dbname);
 mysqli_query($link,"SET NAMES utf8");
 $id = $_REQUEST['id'];

@@ -1,8 +1,9 @@
+<!doctype html> //finish
 <?php session_start();
 $hostname = "mysql.hostinger.in.th";
 $user = "u967435075_joker";
 $password = "joker11";
-$dbname = "u967435075_song"; 
+$dbname = "u967435075_song";
 $link = mysqli_connect($hostname,$user,$password,$dbname);
 mysqli_query($link,"SET NAMES utf8");
 $id = $_REQUEST['id'];
@@ -77,7 +78,7 @@ $_SESSION['rent'] = $id;
     <h1>เพิ่ม รายการเช่า</h1></center>
   <form form id="form1" name="form1" method="post" action="success_addrent.php">
     <br><br>
-    
+
         <p><b>รหัสงาน
           <tab2>
           : </b>

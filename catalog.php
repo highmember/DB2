@@ -1,4 +1,4 @@
-<!doctype html>
+<!doctype html>//finish
 <?php
 $hostname = "mysql.hostinger.in.th";
 $user = "u967435075_joker";
@@ -19,9 +19,6 @@ $i=0;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width : 568px)">
-  <link rel="stylesheet" type="text/css" href="css/dropdown.css">
-  <script type="text/javascript" src="js/mobile.js"></script>
 </head>
 <body>
   <div id="header">
@@ -69,39 +66,34 @@ $i=0;
       <li><a href="show_audit.php">บัญชี</a></li>
     </ul>
   </div>
-<br>
-<br>
-
-
+<div id="body">
+<br><br><br><br><br>
+<center><h1>สินค้า</h1></center>
+<br><br><br>
 <form name="frmSearch" method="post" action="searchcatalog.php">
-  <table width="599" border="1">
-    <tr>
-      <th>ตัวเลือกค้นหา
+      <center><b>ตัวเลือกค้นหา :</b>
         <select name="ddlSelect" id="ddlSelect">
           <option>- เลือก -</option>
           <option value="cat_id" <?if($_POST["ddlSelect"]=="cat_id"){echo"selected";}?>>รหัสแคทตาล็อก</option>
           <option value="cat_descript" <?if($_POST["ddlSelect"]=="cat_descript"){echo"selected";}?>>รายละเอียดสินค้า</option>
           <option value="ven_id" <?if($_POST["ddlSelect"]=="ven_id"){echo"selected";}?>>รหัส ven</option>
         </select>
-		คำค้นหา
+	<b>	คำค้นหา :</b>
         <input name="txtKeyword" type="text" id="txtKeyword" value="<?=$_POST["txtKeyword"];?>">
-      <input type="submit" value="ค้นหา"></th>
-    </tr>
-  </table>
+      <input type="submit" value="ค้นหา"><br><br><br>
+      <a href = 'newcatalog.php?id=$result[cat_id]'>เพื่มสินค้า</a>
 </form>
+</center>
 <br>
 <br>
-<a href = 'newcatalog.php?id=$result[cat_id]'>เพิ่ม</a>
-<br>
-
-<table border="1">
-	<tr>
-		<th scope="col">รหัส แคทตาล็อค</th>
-		<th scope="col">รหัส vender</th>
-        <th scope="col">รายละเอียด</th>
-        <th scope="col">ราคา/ชิ้น</th>
-		<th scope="col">ส่วนลด</th>
-	</tr>
+<center><table >
+<tr>
+		<th >รหัส แคทตาล็อค</th>
+		<th >รหัส vender</th>
+        <th >รายละเอียด</th>
+        <th >ราคา/ชิ้น</th>
+		<th >ส่วนลด</th>
+  </tr>
 
 <?php
 while ($i < $num_rows)
@@ -120,11 +112,10 @@ echo '</ul>';
 $i++;
 }
 ?>
-<table>
+</center></table>
 <br>
 <br>
-
-
+</div>
 </body>
 </html>
 

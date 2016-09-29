@@ -1,9 +1,10 @@
+<!doctype html> //finish
 <?php session_start();
 $hostname = "mysql.hostinger.in.th";
-$user = "u967435075_joker"; 
-$password = "joker11"; 
-$dbname = "u967435075_song"; 
-$tblname = "project"; 
+$user = "u967435075_joker";
+$password = "joker11";
+$dbname = "u967435075_song";
+$tblname = "project";
 $field_search = "CUS_ID";
 $field_search1 = "proj_id";
 $id = $_REQUEST['id'];
@@ -14,26 +15,26 @@ $dbquery = mysqli_query($link, $sql);
 
 if($_POST['Add'])
 {
-	
+
 	$cusid = $_SESSION['cid'];
 	$detail = $_POST['detail'];
-	$start = $_POST['start'];	
+	$start = $_POST['start'];
 	$end = $_POST['end'];
 	$phase = 0;
 	$price = $_POST['price'];
-	$curr = 0;	
+	$curr = 0;
 	$payment = 0;
 	$net = $_POST['price'];
-	$sql_add = "insert into project set 
+	$sql_add = "insert into project set
 	CUS_ID = '$cusid' , proj_detail = '$detail' , proj_start = '$start' , proj_end = '$end' , proj_phase_total = '$phase'
 	, proj_price = '$price',  proj_curr_income = '$curr', proj_curr_payment = '$payment', proj_net_income = '$net'";
 	mysqli_query($link,$sql_add);
-	echo $sql_add; 
+	echo $sql_add;
 	echo $_SESSION['cid'];
-	$sql2 = "select * from `" . $tblname . "` where `" . $field_search . "` like " . $cusid . " ";	
+	$sql2 = "select * from `" . $tblname . "` where `" . $field_search . "` like " . $cusid . " ";
 	$dbquery2 = mysqli_query($link, $sql2);
 	$num_rows = mysqli_num_rows($dbquery2);
-    $i=0; 
+    $i=0;
 	while($i < $num_rows)
 	{
 		$result1 = mysqli_fetch_array($dbquery2);
@@ -45,14 +46,14 @@ if($_POST['Add'])
 	}
 }
 if($_SESSION['ck']==1){
-	
-	//$sql2 = "select * from `" . $tblname . "` where `" . $field_search1 . "` like " . $id . " ";	
+
+	//$sql2 = "select * from `" . $tblname . "` where `" . $field_search1 . "` like " . $id . " ";
 	//$dbquery2 = mysqli_query($link, $sql2);
-	
+
 		//$result1 = mysqli_fetch_array($dbquery2);
 				//if($result1[proj_phase_total]>=$_SESSION['phasetotal'] )
 				//$_SESSION['phasetotal'] = $result1['proj_phase_total'];
-	
+
 	echo $_SESSION['ck'];
 	//echo $result1['proj_phase_total'];
 echo $_SESSION['phasetotal'];
@@ -136,20 +137,20 @@ mysqli_close($link);
          <p><b>ราคาต่อเฟส : </b>
 	         <input type="text" name="price1" id="price1" /></p>
            <br>  <br>  <br>
-           <center><input type="submit" name="Add1" id="Add1" value="บันทึก" /></p></center>
+           <center><input type="submit" name="Add1" id="Add1" value="บันทึก" />   <input type="submit" name="Add2" id="Add2" value="เสร็จสิ้น" /></p></center></p></center>
 	</form>
 	 <form id="form" name="form" method="post" action="successphase.php">
-	 <center><input type="submit" name="Add2" id="Add2" value="เสร็จสิ้น" /></p></center>
+
 	 </form>
 	</div>
   <br>  <br>  <br>
 	</div>
-<?php 
+<?php
 $hostname1 = "mysql.hostinger.in.th";
-$user1 = "u967435075_joker"; 
-$password1 = "joker11"; 
-$dbname1 = "u967435075_song"; 
-$tblname1 = "phase"; 
+$user1 = "u967435075_joker";
+$password1 = "joker11";
+$dbname1 = "u967435075_song";
+$tblname1 = "phase";
 $link1 = mysqli_connect($hostname1,$user1,$password1,$dbname1);
 mysqli_query($link1,"SET NAMES utf8");
 $sql1 = "select * from `" . $tblname1 . "`;";
@@ -162,13 +163,13 @@ if($_POST['Add1'])
 		$phaseid = $_SESSION['phase'];
 		$projid = $_SESSION['proid'];
 		$detail1 = $_POST['detail1'];
-		$start1 = $_POST['start1'];	
+		$start1 = $_POST['start1'];
 		$end1 = $_POST['end1'];
 		$price1 = $_POST['price1'];
-		$income1 = 0;	
+		$income1 = 0;
 		$payment1 = 0;
 		$status = "No";
-		$sql_add1 = "insert into phase set 
+		$sql_add1 = "insert into phase set
 		phase_id = '$phaseid' ,  proj_id = '$projid'  , phase_start = '$start1' , phase_end = '$end1' , phase_detail = '$detail1', phase_price = '$price1'
 		, phase_income = '$income1',  phase_payment = '$payment1', phase_status = '$status' ";
 		mysqli_query($link1,$sql_add1);
@@ -180,20 +181,20 @@ if($_POST['Add1'])
 		$phaseid = $_SESSION['phasetotal'];
 		$projid = $_SESSION['proid'];
 		$detail1 = $_POST['detail1'];
-		$start1 = $_POST['start1'];	
+		$start1 = $_POST['start1'];
 		$end1 = $_POST['end1'];
 		$price1 = $_POST['price1'];
-		$income1 = 0;	
+		$income1 = 0;
 		$payment1 = 0;
 		$status = "No";
-		$sql_add1 = "insert into phase set 
+		$sql_add1 = "insert into phase set
 		phase_id = '$phaseid' ,  proj_id = '$projid'  , phase_start = '$start1' , phase_end = '$end1' , phase_detail = '$detail1', phase_price = '$price1'
 		, phase_income = '$income1',  phase_payment = '$payment1', phase_status = '$status' ";
 		mysqli_query($link1,$sql_add1);
 		echo $phaseid;
 		echo "test";
 	}
-	echo $sql_add1; 
+	echo $sql_add1;
 	echo $_SESSION['phase'];
 	echo $_SESSION['proid'];
 	echo $_SESSION['check'];

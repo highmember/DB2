@@ -1,4 +1,4 @@
-<!doctype html>
+<!doctype html> //finish
 <?php session_start();
 $hostname = "mysql.hostinger.in.th";
 $user = "u967435075_joker";
@@ -101,7 +101,7 @@ $_SESSION['ck'] = 0;
 			<p><b>ราคางาน : </b>
 	         <input type="text" name="price" id="price" /></p>
            <br>  <br>  <br>
-           <center><input type="submit" name="Add" id="Add" value="Add" /></p></center>
+           <center><input type="submit" name="Add" id="Add" value="เพิ่ม" /></p></center>
 	</form>
 	</div>
   <br>  <br>  <br>
