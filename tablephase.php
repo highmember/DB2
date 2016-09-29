@@ -1,3 +1,4 @@
+<!doctype html>
 <?php session_start();
 $hostname = "mysql.hostinger.in.th";
 $user = "u967435075_joker";
@@ -25,7 +26,6 @@ echo $sql;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-  <script type="text/javascript" src="js/mobile.js"></script>
 </head>
 <body>
   <div id="header">
@@ -64,7 +64,7 @@ echo $sql;
           <li><a href="warehouse.php">คลังอุปกรณ์(ของบริษัท)</a></li>
         </ul>
       </li>
-      <li><a href="#">Vander</a>
+      <li><a href="#">Vender</a>
         <ul>
           <li><a href="newvender.php">เพิ่ม Vender ใหม่</a></li>
           <li><a href="oldvender.php">แก้ไขข้อมูล Vender</a></li>
@@ -75,37 +75,37 @@ echo $sql;
   </div>
 
 <div id="body">
-
-
-
-<table border="1">
+<br><br><br><br><br>
+<center><h1>ข้อมูล</h1></center>
+<br><br><br>
+<center><table>
 	<tr>
-		<th scope="col">รหัสงาน</th>
-		<th scope="col">เฟสที่</th>
-		<th scope="col">รายละเอียดเฟส</th>
-		<th scope="col">วันเริ่มเฟส</th>
-		<th scope="col">วันจบเฟส</th>
-		<th scope="col">ราคาต่อเฟส</th>
-		<th scope="col">รายรับต่อเฟส</th>
-		<th scope="col">รายจ่ายต่อเฟส</th>
-		<th scope="col">สถานะ</th>
-		<th scope="col">หมายเหคุ</th>
-		<th scope="col">รับเงิน</th>
+		<th >รหัสงาน</th>
+		<th >เฟสที่</th>
+		<th >รายละเอียดเฟส</th>
+		<th >วันเริ่มเฟส</th>
+		<th >วันจบเฟส</th>
+		<th >ราคาต่อเฟส</th>
+		<th >รายรับต่อเฟส</th>
+		<th >รายจ่ายต่อเฟส</th>
+		<th >สถานะ</th>
+		<th >หมายเหคุ</th>
+		<th >รับเงิน</th>
 	</tr>
 <?php
 
 $hostname1 = "mysql.hostinger.in.th";
-$user1 = "u967435075_joker"; 
-$password1 = "joker11"; 
-$dbname1 = "u967435075_song"; 
-$tblname1 = "phase"; 
+$user1 = "u967435075_joker";
+$password1 = "joker11";
+$dbname1 = "u967435075_song";
+$tblname1 = "phase";
 $link1 = mysqli_connect($hostname1,$user1,$password1,$dbname1);
 mysqli_query($link1,"SET NAMES utf8");
 $id1 = $_REQUEST['id'];
 $sql1 = "select * from `" . $tblname1 . "`;";
 $dbquery1 = mysqli_query($link1, $sql1);
 $num_rows1 = mysqli_num_rows($dbquery1);
-$i=0; 
+$i=0;
 
  while($i < $num_rows1)
  {
@@ -113,7 +113,7 @@ $i=0;
 	if($result1[proj_id]==$_SESSION['pid'])
 	{
 		$_SESSION['phid'] = $result1[proj_id];
-	echo '<ul>';
+
 	echo '<tr>';
 	echo "<td>$result1[proj_id]</td>" ;
 	echo "<td>$result1[phase_id]</td>" ;
@@ -126,13 +126,14 @@ $i=0;
 	echo "<td>$result1[phase_status]</td>" ;
 	echo "<td>$result1[phase_note]</td>" ;
 	echo "<td><a href = 'receiptphase.php?id=$result1[phase_id]'>รับเงิน</a></td>"  ;
-	echo '</tr>'; 
-	echo '</ul>';
+	echo '</tr>';
+
 	}
 	$i++;
  }
  ?>
- </table>
+ </center></table>
+ <br><br><br>
 </div>
 
 </body>

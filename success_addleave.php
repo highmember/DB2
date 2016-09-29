@@ -1,4 +1,5 @@
-<?php 
+<!doctype html>
+<?php
 $hostname = "mysql.hostinger.in.th";
 $user = "u967435075_joker";
 $password = "joker11";
@@ -15,7 +16,7 @@ $bus = $_POST['bus'];
 $sick = $_POST['sick'];
 $special = $_POST['special'];
 $total = $special + $bus + $sick ;
-$sql_edit = "update employee set emp_curr_date = '$date' , emp_lea_bus = '$bus' , emp_lea_sick = '$sick', emp_lea_special = '$special' 
+$sql_edit = "update employee set emp_curr_date = '$date' , emp_lea_bus = '$bus' , emp_lea_sick = '$sick', emp_lea_special = '$special'
 , emp_tot_lea = '$total' where emp_id = '$id'";
 
 mysqli_query($link,$sql_edit) ;
@@ -30,7 +31,6 @@ mysqli_query($link,$sql_edit) ;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-  <script type="text/javascript" src="js/mobile.js"></script>
 </head>
 <body>
   <div id="header">
@@ -69,7 +69,7 @@ mysqli_query($link,$sql_edit) ;
           <li><a href="warehouse.php">คลังอุปกรณ์(ของบริษัท)</a></li>
         </ul>
       </li>
-      <li><a href="#">Vander</a>
+      <li><a href="#">Vender</a>
         <ul>
           <li><a href="newvender.php">เพิ่ม Vender ใหม่</a></li>
           <li><a href="oldvender.php">แก้ไขข้อมูล Vender</a></li>
@@ -78,14 +78,22 @@ mysqli_query($link,$sql_edit) ;
       <li><a href="show_audit.php">บัญชี</a></li>
   </ul>
 </div>
+
+
 <div id="body">
-  <h1>ทำรายการสำเร็จ</h1>
-  <br />
-  <li><a href="leave.php">ค้นหาข้อมูลการลา</a></li>
-  <li><a href="add_leave.php">เพิ่มข้อมูลการลาใหม่</a></li>
-  </br>
+  <br><br><br><br><br>
+  <center><h1>ทำรายการสำเร็จ</h1></center>
+  <br><br><br>
+
+    <form action="leave.php">
+      <center><input type="submit" name="gotooldcustomer" id="send" value="ค้นหาข้อมูลการลา" /></center></form>
+      <form action="add_leave.php">
+      <center><input type="submit" name="gotonewcustomer" id="send" value="เพิ่มข้อมูลการลาใหม่่" /></center></form>
+
+
+  </br></br></br>
 </div>
-<p>&nbsp;</p>
+
 </body>
 </html>
 <?php

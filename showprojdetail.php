@@ -58,7 +58,7 @@ $i=0;
           <li><a href="warehouse.php">คลังอุปกรณ์(ของบริษัท)</a></li>
         </ul>
       </li>
-      <li><a href="#">Vander</a>
+      <li><a href="#">Vender</a>
         <ul>
           <li><a href="newvender.php">เพิ่ม Vender ใหม่</a></li>
           <li><a href="oldvender.php">แก้ไขข้อมูล Vender</a></li>
@@ -66,14 +66,14 @@ $i=0;
       </li>
       <li><a href="show_audit.php">บัญชี</a></li>
     </ul>
-	<br />
-	<br />
+
 </div>
 
 <div id = 'body'>
 
 <br /><br /><br /><br /><br />
-
+<center><h1> ข้อมูล</h1></center>
+<br /><br /><br />
 <center><table>
 	<tr>
 		<th>รหัสลูกค้า</th>
@@ -113,7 +113,7 @@ $i=0;
  }
  ?>
  </center></table>
-
+<br /><br /><br />
 </div>
 </body>
 </html>

@@ -1,3 +1,4 @@
+<!doctype html>
 <?php session_start();
 $hostname = "mysql.hostinger.in.th";
 $user = "u967435075_joker";
@@ -37,7 +38,6 @@ mysqli_query($link,$sql_addsalary) ;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-  <script type="text/javascript" src="js/mobile.js"></script>
 </head>
 <body>
   <div id="header">
@@ -76,7 +76,7 @@ mysqli_query($link,$sql_addsalary) ;
           <li><a href="warehouse.php">คลังอุปกรณ์(ของบริษัท)</a></li>
         </ul>
       </li>
-      <li><a href="#">Vander</a>
+      <li><a href="#">Vender</a>
         <ul>
           <li><a href="newvender.php">เพิ่ม Vender ใหม่</a></li>
           <li><a href="oldvender.php">แก้ไขข้อมูล Vender</a></li>
@@ -85,14 +85,20 @@ mysqli_query($link,$sql_addsalary) ;
       <li><a href="show_audit.php">บัญชี</a></li>
   </ul>
 </div>
+
+
 <div id="body">
-  <h1>อัปเดทข้อมูลแล้ว</h1>
-  <br />
-  <li><a href="drawdown.php">ค้นหาการเบิกของพนักงาน</a></li>
-  <li><a href="new_drawdown.php">เพิ่มการเบิกของพนักงานใหม่</a></li>
-  </br>
+  <br><br><br><br><br>
+  <center><h1>อัปเดทข้อมูลแล้ว</h1></center>
+  <br><br><br>
+  <form action="drawdown.php">
+    <center><input type="submit" name="gooldvender" id="send" value="ค้นหาการเบิกของพนักงาน" /></center></form>
+    <form action="new_drawdown.php">
+      <center><input type="submit" name="gonewvender" id="send" value="เพิ่มการเบิกของพนักงานใหม่" /></center></form>
+  <br><br><br>
+
 </div>
-<p>&nbsp;</p>
+
 </body>
 </html>
 <?php

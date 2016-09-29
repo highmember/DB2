@@ -1,3 +1,4 @@
+<!doctype html>
 <?php session_start();
 $hostname = "mysql.hostinger.in.th";
 $user = "u967435075_joker";
@@ -20,8 +21,6 @@ $_SESSION['ph'] = $phid;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width : 568px)">
-  <script type="text/javascript" src="js/mobile.js"></script>
 </head>
 <body>
   <div id="header">
@@ -60,7 +59,7 @@ $_SESSION['ph'] = $phid;
           <li><a href="warehouse.php">คลังอุปกรณ์(ของบริษัท)</a></li>
         </ul>
       </li>
-      <li><a href="#">Vander</a>
+      <li><a href="#">Vender</a>
         <ul>
           <li><a href="newvender.php">เพิ่ม Vender ใหม่</a></li>
           <li><a href="oldvender.php">แก้ไขข้อมูล Vender</a></li>
@@ -69,7 +68,10 @@ $_SESSION['ph'] = $phid;
       <li><a href="show_audit.php">บัญชี</a></li>
     </ul>
 </div>
+
+
     <div id="body">
+      <br>
       <br>
       <br>
       <br>
@@ -79,53 +81,55 @@ $_SESSION['ph'] = $phid;
         <br>
         <p><b>รหัสงาน: </b><input type="text" name="cid" id ="readonly" readonly="readonly" value="<?=$result['proj_id']?>">
 		<p><b>รหัสเฟส: </b><input type="text" name="pid" id ="readonly" readonly="readonly" value="<?=$result['phase_id']?>">
-        <p><b>รายละเอียด :</b><input type="text" name="descript" id="descript">
-        <p><b>วันที่ลงบิล :</b><input type="date" name="start" id="start" >
-        <p><b>จำนวนเงิน :</b><input type="int" name="price" id="price" ><b>บาท</b>
-        <p><b>รหัส vender :</b><input type="int" name="vid" id="vid" >
-        <p><input type="submit" name="Add" id="Add" value="บันทึก"></p>
+        <p><b>รายละเอียด : </b><input type="text" name="descript" id="descript">
+        <p><b>วันที่ลงบิล : </b><input type="date" name="start" id="start" >
+        <p><b>จำนวนเงิน : </b><input type="int" name="price" id="price" ><b>บาท</b>
+        <p><b>รหัส vender : </b><input type="int" name="vid" id="vid" >
+        <p><center><input type="submit" name="Add" id="Add" value="บันทึก"></center></p>
       </form>
-
+<br><br><br>
 	  <center><h1>เลือก vender เก่า </h1></center>
-	  <br><a href = "newvender.php">เพิ่ม vender ใหม่</a>
+	  <br><br><br><center><b><a href = "newvender.php">เพิ่ม vender ใหม่</a></b></center>
+<br>
 <br>
 <br>
 <?php
 $hostname = "mysql.hostinger.in.th";
-$user = "u967435075_joker"; 
-$password = "joker11"; 
-$dbname = "u967435075_song"; 
-$tblname1 = "vender"; 
+$user = "u967435075_joker";
+$password = "joker11";
+$dbname = "u967435075_song";
+$tblname1 = "vender";
 $link1 = mysqli_connect($hostname,$user,$password,$dbname);
 mysqli_query($link1,"SET NAMES utf8");
 $sql1 = "select * from `" . $tblname1 . "`;";
 $dbquery1 = mysqli_query($link1, $sql1);
 $num_rows1 = mysqli_num_rows($dbquery1);
-$j=0; 
+$j=0;
 ?>
-<table border="1">
+<center><table>
 	<tr>
-		<th scope="col">รหัส vender</th>
-		<th scope="col">ชื่อบริษัท</th>
-		<th scope="col">เบอร์โทรศัพท์</th>
+		<th >รหัส vender</th>
+		<th >ชื่อบริษัท</th>
+		<th >เบอร์โทรศัพท์</th>
 	</tr>
-	
+
 <?php
 while ($j < $num_rows1)
 {
 $result1 = mysqli_fetch_array($dbquery1);
 
-echo '<ul>';
+
 echo '<tr>';
 echo "<td>$result1[ven_id]</a></td>" ;
 echo "<td>$result1[ven_name_company]</a></td>" ;
 echo "<td>$result1[ven_phone]</a></td>" ;
-echo '</tr>'; 
-echo '</ul>';
+echo '</tr>';
+
 $j++;
 }
 ?>
-<table>
+</center></table>
+<br>
 <br>
 <br>
   </div>

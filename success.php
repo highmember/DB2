@@ -1,4 +1,4 @@
-
+<!doctype html>
 <?php
 $hostname = "mysql.hostinger.in.th";
 $user = "u967435075_joker";
@@ -45,7 +45,6 @@ mysqli_query($link, $sql_edit) ;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-  <script type="text/javascript" src="js/mobile.js"></script>
 </head>
 <body>
   <div id="header">
@@ -84,7 +83,7 @@ mysqli_query($link, $sql_edit) ;
           <li><a href="warehouse.php">คลังอุปกรณ์(ของบริษัท)</a></li>
         </ul>
       </li>
-      <li><a href="#">Vander</a>
+      <li><a href="#">Vender</a>
         <ul>
           <li><a href="newvender.php">เพิ่ม Vender ใหม่</a></li>
           <li><a href="oldvender.php">แก้ไขข้อมูล Vender</a></li>
