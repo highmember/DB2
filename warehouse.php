@@ -82,7 +82,7 @@ $i=0;
         </select><tab3>
 		<b>คำค้นหา : </b>
         <input name="txtKeyword" type="text" id="txtKeyword" value="<?=$_POST["txtKeyword"];?>">
-      <input type="submit" value="ค้นหา"></center>
+      <input type="submit"  value="ค้นหา"></center>
 
 </form>
 
